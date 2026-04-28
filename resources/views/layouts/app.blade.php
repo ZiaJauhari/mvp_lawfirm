@@ -68,7 +68,7 @@
 
                 <!-- Logo -->
                 <a href="{{ route('home') }}" class="flex items-center group shrink-0" aria-label="MVP Law Firm - Beranda">
-                    <img src="{{ asset('storage/primary-horizontal.png') }}" alt="MVP Law Logo" class="h-11 md:h-12 w-auto object-contain transition-all duration-300 group-hover:opacity-80">
+                    <img src="{{ asset('storage/app/public/primary-horizontal.png') }}" alt="MVP Law Logo" class="h-11 md:h-12 w-auto object-contain transition-all duration-300 group-hover:opacity-80">
                 </a>
 
                 <!-- Desktop Nav — centered -->
@@ -170,7 +170,7 @@
                 <!-- Brand -->
                 <div class="lg:col-span-1">
                     <a href="{{ route('home') }}" class="flex items-center mb-5 group">
-                        <img src="{{ asset('storage/primary-horizontal.png') }}" alt="MVP Law Logo" class="h-12 w-auto object-contain">
+                        <img src="{{ asset('storage/app/public/primary-horizontal.png') }}" alt="MVP Law Logo" class="h-12 w-auto object-contain">
                     </a>
                     <p class="text-sm leading-relaxed mb-5" style="color:#5a5e7a;">
                         {{ $footerContents['footer_description'] }}
