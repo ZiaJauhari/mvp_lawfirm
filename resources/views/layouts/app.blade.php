@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     {{-- Favicon --}}
-    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}?v=1.0">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
