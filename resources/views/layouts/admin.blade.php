@@ -681,14 +681,9 @@
     <aside class="adm-sidebar" id="adm-sidebar">
         {{-- Brand --}}
         <a href="{{ route('admin.dashboard') }}" class="adm-sidebar-brand">
-            <div class="adm-sidebar-brand-icon">
-                <i class="fas fa-scale-balanced"></i>
-            </div>
-            <div class="adm-sidebar-brand-text">
-                <span class="name">MVP Law</span>
-                <span class="sub">Admin Panel</span>
-            </div>
+            <img src="{{ asset('storage/primary-horizontal.png') }}" alt="MVP Law Logo" style="height: 40px; width: auto; object-fit: contain;">
         </a>
+
 
         {{-- Navigation --}}
         <nav class="adm-nav">
