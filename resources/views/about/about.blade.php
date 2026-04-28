@@ -73,9 +73,9 @@
                             </div>
                             <blockquote class="text-lg font-medium leading-relaxed mb-4 italic"
                                 style="font-family:'Playfair Display',serif; color:#FDFBFC;">
-                                "Keadilan bukan hanya sebuah kata — itu adalah komitmen yang kami pegang setiap hari."
+                                "{{ $contents['about_quote_text'] ?? 'Keadilan bukan hanya sebuah kata — itu adalah komitmen yang kami pegang setiap hari.' }}"
                             </blockquote>
-                            <div class="text-sm" style="color:rgba(212,184,150,0.8);">— Pendiri MVP Law Firm</div>
+                            <div class="text-sm" style="color:rgba(212,184,150,0.8);">— {{ $contents['about_quote_author'] ?? 'Pendiri MVP Law Firm' }}</div>
                         </div>
                     </div>
                 </div>
@@ -99,10 +99,10 @@
 
             <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 stagger-children">
                 @foreach ([
-                    ['shield-alt', 'Integritas', 'Komitmen tak tergoyahkan terhadap praktik etis dan nasihat yang jujur kepada setiap klien'],
-                    ['trophy', 'Keunggulan', 'Pengejaran tanpa henti terhadap standar tertinggi dalam setiap kasus yang kami tangani'],
-                    ['users', 'Fokus Klien', 'Menempatkan kebutuhan dan kepentingan klien selalu di atas segalanya dalam setiap keputusan'],
-                    ['lightbulb', 'Inovasi', 'Menerapkan pendekatan modern dan kreatif sambil menghormati tradisi dan nilai hukum'],
+                    ['shield-alt', $contents['about_value_1_title'] ?? 'Integritas', $contents['about_value_1_desc'] ?? 'Komitmen tak tergoyahkan terhadap praktik etis dan nasihat yang jujur kepada setiap klien'],
+                    ['trophy', $contents['about_value_2_title'] ?? 'Keunggulan', $contents['about_value_2_desc'] ?? 'Pengejaran tanpa henti terhadap standar tertinggi dalam setiap kasus yang kami tangani'],
+                    ['users', $contents['about_value_3_title'] ?? 'Fokus Klien', $contents['about_value_3_desc'] ?? 'Menempatkan kebutuhan dan kepentingan klien selalu di atas segalanya dalam setiap keputusan'],
+                    ['lightbulb', $contents['about_value_4_title'] ?? 'Inovasi', $contents['about_value_4_desc'] ?? 'Menerapkan pendekatan modern dan kreatif sambil menghormati tradisi dan nilai hukum'],
                 ] as [$icon, $title, $desc])
                 <div class="glass rounded-2xl p-8 card-lift holographic reveal text-center relative overflow-hidden group">
                     {{-- Background icon --}}
@@ -140,11 +140,11 @@
 
                 <div class="space-y-10">
                     @foreach ([
-                        ['1999', 'Firma Didirikan', 'MVP Law Firm didirikan dengan visi menyediakan layanan hukum berkualitas tinggi yang dapat diakses oleh semua kalangan.', 'left'],
-                        ['2005', 'Ekspansi Regional', 'Membuka kantor tambahan dan memperluas tim untuk melayani lebih banyak klien di berbagai wilayah Indonesia.', 'right'],
-                        ['2012', 'Penghargaan Nasional', 'Menerima berbagai penghargaan bergengsi untuk keunggulan di bidang hukum korporasi dan keluarga dari asosiasi nasional.', 'left'],
-                        ['2018', 'Transformasi Digital', 'Mengadopsi teknologi hukum terkini untuk meningkatkan layanan dan aksesibilitas klien secara digital.', 'right'],
-                        ['2024', 'Inovasi & Pertumbuhan', 'Meluncurkan layanan digital inovatif dan memperluas tim ke 50+ pengacara ahli di berbagai bidang hukum.', 'left'],
+                        [$contents['about_timeline_1_year'] ?? '1999', $contents['about_timeline_1_title'] ?? 'Firma Didirikan', $contents['about_timeline_1_desc'] ?? 'MVP Law Firm didirikan dengan visi menyediakan layanan hukum berkualitas tinggi yang dapat diakses oleh semua kalangan.', 'left'],
+                        [$contents['about_timeline_2_year'] ?? '2005', $contents['about_timeline_2_title'] ?? 'Ekspansi Regional', $contents['about_timeline_2_desc'] ?? 'Membuka kantor tambahan dan memperluas tim untuk melayani lebih banyak klien di berbagai wilayah Indonesia.', 'right'],
+                        [$contents['about_timeline_3_year'] ?? '2012', $contents['about_timeline_3_title'] ?? 'Penghargaan Nasional', $contents['about_timeline_3_desc'] ?? 'Menerima berbagai penghargaan bergengsi untuk keunggulan di bidang hukum korporasi dan keluarga dari asosiasi nasional.', 'left'],
+                        [$contents['about_timeline_4_year'] ?? '2018', $contents['about_timeline_4_title'] ?? 'Transformasi Digital', $contents['about_timeline_4_desc'] ?? 'Mengadopsi teknologi hukum terkini untuk meningkatkan layanan dan aksesibilitas klien secara digital.', 'right'],
+                        [$contents['about_timeline_5_year'] ?? '2024', $contents['about_timeline_5_title'] ?? 'Inovasi & Pertumbuhan', $contents['about_timeline_5_desc'] ?? 'Meluncurkan layanan digital inovatif dan memperluas tim ke 50+ pengacara ahli di berbagai bidang hukum.', 'left'],
                     ] as [$year, $title, $desc, $side])
                     <div class="relative reveal">
                         <div class="md:flex items-center {{ $side === 'left' ? 'md:flex-row' : 'md:flex-row-reverse' }}">
@@ -174,31 +174,31 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 stagger-children">
 
                 <div class="text-center reveal">
-                    <div class="text-5xl font-bold mb-2 counter-animate" data-target="25"
+                    <div class="text-5xl font-bold mb-2 counter-animate" data-target="{{ $contents['about_stat_1_number'] ?? '25' }}"
                         style="font-family:'Playfair Display',serif; color:#8a7048;">0</div>
-                    <div class="font-semibold mb-1 text-sm" style="color:#242844;">Tahun Pengalaman</div>
-                    <div class="text-xs" style="color:#5a5e7a;">Melayani klien sejak 1999</div>
+                    <div class="font-semibold mb-1 text-sm" style="color:#242844;">{{ $contents['about_stat_1_label'] ?? 'Tahun Pengalaman' }}</div>
+                    <div class="text-xs" style="color:#5a5e7a;">{{ $contents['about_stat_1_desc'] ?? 'Melayani klien sejak 1999' }}</div>
                 </div>
 
                 <div class="text-center reveal">
-                    <div class="text-5xl font-bold mb-2 counter-animate" data-target="50"
+                    <div class="text-5xl font-bold mb-2 counter-animate" data-target="{{ $contents['about_stat_2_number'] ?? '50' }}"
                         style="font-family:'Playfair Display',serif; color:#8a7048;">0</div>
-                    <div class="font-semibold mb-1 text-sm" style="color:#242844;">Pengacara Ahli</div>
-                    <div class="text-xs" style="color:#5a5e7a;">Profesional hukum berdedikasi</div>
+                    <div class="font-semibold mb-1 text-sm" style="color:#242844;">{{ $contents['about_stat_2_label'] ?? 'Pengacara Ahli' }}</div>
+                    <div class="text-xs" style="color:#5a5e7a;">{{ $contents['about_stat_2_desc'] ?? 'Profesional hukum berdedikasi' }}</div>
                 </div>
 
                 <div class="text-center reveal">
-                    <div class="text-5xl font-bold mb-2 counter-animate" data-target="10000"
+                    <div class="text-5xl font-bold mb-2 counter-animate" data-target="{{ $contents['about_stat_3_number'] ?? '10000' }}"
                         style="font-family:'Playfair Display',serif; color:#8a7048;">0</div>
-                    <div class="font-semibold mb-1 text-sm" style="color:#242844;">Kasus Ditangani</div>
-                    <div class="text-xs" style="color:#5a5e7a;">Representasi yang sukses</div>
+                    <div class="font-semibold mb-1 text-sm" style="color:#242844;">{{ $contents['about_stat_3_label'] ?? 'Kasus Ditangani' }}</div>
+                    <div class="text-xs" style="color:#5a5e7a;">{{ $contents['about_stat_3_desc'] ?? 'Representasi yang sukses' }}</div>
                 </div>
 
                 <div class="text-center reveal">
-                    <div class="text-5xl font-bold mb-2 counter-animate" data-target="98"
+                    <div class="text-5xl font-bold mb-2 counter-animate" data-target="{{ $contents['about_stat_4_number'] ?? '98' }}"
                         data-suffix="%" style="font-family:'Playfair Display',serif; color:#8a7048;">0</div>
-                    <div class="font-semibold mb-1 text-sm" style="color:#242844;">Tingkat Keberhasilan</div>
-                    <div class="text-xs" style="color:#5a5e7a;">Kepuasan klien terjamin</div>
+                    <div class="font-semibold mb-1 text-sm" style="color:#242844;">{{ $contents['about_stat_4_label'] ?? 'Tingkat Keberhasilan' }}</div>
+                    <div class="text-xs" style="color:#5a5e7a;">{{ $contents['about_stat_4_desc'] ?? 'Kepuasan klien terjamin' }}</div>
                 </div>
 
             </div>

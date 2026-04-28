@@ -68,7 +68,7 @@
                     <div class="adm-form-group">
                         <label class="adm-label" for="page">Halaman <span class="req">*</span></label>
                         <select id="page" name="page" class="adm-select" required>
-                            @foreach (['home' => 'Beranda', 'services' => 'Layanan', 'about' => 'Tentang Kami', 'team' => 'Tim', 'articles' => 'Artikel', 'contact' => 'Kontak'] as $slug => $lbl)
+                            @foreach (['home' => 'Beranda', 'services' => 'Layanan', 'about' => 'Tentang Kami', 'team' => 'Tim', 'articles' => 'Artikel', 'contact' => 'Kontak', 'footer' => 'Footer'] as $slug => $lbl)
                                 <option value="{{ $slug }}" {{ old('page', $pageContent->page) == $slug ? 'selected' : '' }}>{{ $lbl }}</option>
                             @endforeach
                         </select>

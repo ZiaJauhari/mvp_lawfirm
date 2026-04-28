@@ -35,7 +35,7 @@
 
     <!-- ===================== PRELOADER ===================== -->
     <div id="preloader"
-        class="fixed inset-0 z-[100] flex items-center justify-center transition-opacity duration-500"
+        class="fixed inset-0 z-100 flex items-center justify-center transition-opacity duration-500"
         style="background:#FDFBFC;">
         <div class="text-center">
             <div class="relative w-20 h-20 mx-auto mb-4">
@@ -54,7 +54,7 @@
     </div>
 
     <!-- ===================== SCROLL PROGRESS ===================== -->
-    <div class="fixed top-0 left-0 right-0 z-[60] h-[3px]" style="background:rgba(184,154,114,0.15);">
+    <div class="fixed top-0 left-0 right-0 z-60 h-[3px]" style="background:rgba(184,154,114,0.15);">
         <div id="scroll-progress" class="h-full w-0 transition-none"
             style="background:linear-gradient(90deg,#B89A72,#d4b896);"></div>
     </div>
@@ -63,33 +63,33 @@
     <nav id="navbar"
         class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav">
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-[4.5rem] items-center gap-6">
+        <div class="w-full mx-auto px-6 md:px-12 lg:px-16">
+            <div class="flex justify-between h-20 items-center gap-8">
 
                 <!-- Logo -->
-                <a href="{{ route('home') }}" class="flex items-center group flex-shrink-0" aria-label="MVP Law Firm - Beranda">
-                    <img src="{{ asset('storage/Primary Horizontal.png') }}" alt="MVP Law Logo" class="h-10 md:h-11 w-auto object-contain transition-all duration-300 group-hover:opacity-80">
+                <a href="{{ route('home') }}" class="flex items-center group shrink-0" aria-label="MVP Law Firm - Beranda">
+                    <img src="{{ asset('storage/primary-horizontal.png') }}" alt="MVP Law Logo" class="h-11 md:h-12 w-auto object-contain transition-all duration-300 group-hover:opacity-80">
                 </a>
 
                 <!-- Desktop Nav — centered -->
-                <div class="hidden md:flex flex-1 items-center justify-center gap-6">
+                <div class="hidden md:flex flex-1 items-center justify-center gap-10">
                     <a href="{{ route('home') }}"
-                        class="nav-link {{ request()->routeIs('home') ? 'active' : '' }} text-[0.85rem] font-medium transition-all">beranda</a>
+                        class="nav-link {{ request()->routeIs('home') ? 'active' : '' }} text-[0.9rem] font-medium transition-all tracking-wide">beranda</a>
                     <a href="{{ route('about') }}"
-                        class="nav-link {{ request()->routeIs('about') ? 'active' : '' }} text-[0.85rem] font-medium transition-all">tentang kami</a>
+                        class="nav-link {{ request()->routeIs('about') ? 'active' : '' }} text-[0.9rem] font-medium transition-all tracking-wide">tentang kami</a>
                     <a href="{{ route('services') }}"
-                        class="nav-link {{ request()->routeIs('services') ? 'active' : '' }} text-[0.85rem] font-medium transition-all">layanan</a>
+                        class="nav-link {{ request()->routeIs('services') ? 'active' : '' }} text-[0.9rem] font-medium transition-all tracking-wide">layanan</a>
                     <a href="{{ route('team') }}"
-                        class="nav-link {{ request()->routeIs('team') ? 'active' : '' }} text-[0.85rem] font-medium transition-all">tim</a>
+                        class="nav-link {{ request()->routeIs('team') ? 'active' : '' }} text-[0.9rem] font-medium transition-all tracking-wide">tim</a>
                     <a href="{{ route('articles') }}"
-                        class="nav-link {{ request()->routeIs('articles') ? 'active' : '' }} text-[0.85rem] font-medium transition-all">artikel</a>
+                        class="nav-link {{ request()->routeIs('articles') ? 'active' : '' }} text-[0.9rem] font-medium transition-all tracking-wide">artikel</a>
                 </div>
 
                 <!-- Desktop CTA -->
                 <a href="{{ route('contact') }}" id="nav-cta"
                     class="nav-cta-btn hidden md:flex items-center"
-                    style="background:#242844; color:#FDFBFC; padding: 0.65rem 1.6rem; border-radius: 99px;">
-                    <i class="fas fa-phone-alt text-xs mr-2"></i>
+                    style="background:#242844; color:#FDFBFC; padding: 0.75rem 1.75rem; border-radius: 99px; font-weight: 500; font-size: 0.9rem;">
+                    <i class="fas fa-phone-alt text-sm mr-2"></i>
                     kontak
                 </a>
 
@@ -139,12 +139,12 @@
     </nav>
 
     <!-- ===================== MAIN CONTENT ===================== -->
-    <main class="flex-grow" {!! request()->routeIs('home') ? '' : 'style="padding-top:4.5rem;"' !!}>
+    <main class="grow" {!! request()->routeIs('home') ? '' : 'style="padding-top:4.5rem;"' !!}>
         @yield('content')
     </main>
 
     <!-- ===================== WHATSAPP FAB ===================== -->
-    <a href="https://wa.me/6281234567890?text=Halo%20MVP%20Law%20Firm%2C%20saya%20ingin%20konsultasi%20hukum."
+    <a href="{{ $footerContents['footer_whatsapp_link'] ?? 'https://wa.me/6281234567890' }}?text=Halo%20MVP%20Law%20Firm%2C%20saya%20ingin%20konsultasi%20hukum."
         target="_blank" rel="noopener noreferrer"
         class="fab-whatsapp group no-print"
         aria-label="Hubungi via WhatsApp"
@@ -170,28 +170,28 @@
                 <!-- Brand -->
                 <div class="lg:col-span-1">
                     <a href="{{ route('home') }}" class="flex items-center mb-5 group">
-                        <img src="{{ asset('storage/Primary Horizontal.png') }}" alt="MVP Law Logo" class="h-12 w-auto object-contain">
+                        <img src="{{ asset('storage/primary-horizontal.png') }}" alt="MVP Law Logo" class="h-12 w-auto object-contain">
                     </a>
                     <p class="text-sm leading-relaxed mb-5" style="color:#5a5e7a;">
-                        Layanan hukum profesional dengan integritas dan keunggulan. Solusi hukum komprehensif untuk individu dan bisnis.
+                        {{ $footerContents['footer_description'] }}
                     </p>
                     <div class="flex gap-3">
-                        <a href="#" aria-label="LinkedIn"
+                        <a href="{{ $footerContents['footer_linkedin'] }}" aria-label="LinkedIn"
                             class="social-link w-9 h-9 rounded-lg flex items-center justify-center border"
                             style="background:#F5F3F4; border-color:rgba(184,154,114,0.15);">
                             <i class="fab fa-linkedin-in text-[#B89A72] text-sm"></i>
                         </a>
-                        <a href="#" aria-label="Twitter / X"
+                        <a href="{{ $footerContents['footer_twitter'] }}" aria-label="Twitter / X"
                             class="social-link w-9 h-9 rounded-lg flex items-center justify-center border"
                             style="background:#F5F3F4; border-color:rgba(184,154,114,0.15);">
                             <i class="fab fa-twitter text-[#B89A72] text-sm"></i>
                         </a>
-                        <a href="#" aria-label="Facebook"
+                        <a href="{{ $footerContents['footer_facebook'] }}" aria-label="Facebook"
                             class="social-link w-9 h-9 rounded-lg flex items-center justify-center border"
                             style="background:#F5F3F4; border-color:rgba(184,154,114,0.15);">
                             <i class="fab fa-facebook-f text-[#B89A72] text-sm"></i>
                         </a>
-                        <a href="#" aria-label="Instagram"
+                        <a href="{{ $footerContents['footer_instagram'] }}" aria-label="Instagram"
                             class="social-link w-9 h-9 rounded-lg flex items-center justify-center border"
                             style="background:#F5F3F4; border-color:rgba(184,154,114,0.15);">
                             <i class="fab fa-instagram text-[#B89A72] text-sm"></i>
@@ -230,24 +230,36 @@
                     <h3 class="font-semibold mb-5 text-sm" style="color:#242844; font-family:'Playfair Display',serif; letter-spacing:0.05em;">Hubungi Kami</h3>
                     <ul class="space-y-4">
                         <li class="flex items-start gap-3">
-                            <i class="fas fa-map-marker-alt mt-0.5 flex-shrink-0" style="color:#B89A72;"></i>
-                            <span class="text-sm" style="color:#5a5e7a;">Jl. Sudirman No. 123<br>Jakarta Pusat, 10220</span>
+                            <i class="fas fa-map-marker-alt mt-1 shrink-0" style="color:#B89A72;"></i>
+                            <div class="text-sm" style="color:#5a5e7a;">
+                                <span class="block font-semibold text-[#242844] mb-0.5">Kantor Jakarta</span>
+                                {!! $footerContents['footer_address'] !!}
+                            </div>
+                        </li>
+                        @if(!empty($footerContents['footer_address_2']))
+                        <li class="flex items-start gap-3 mt-4">
+                            <i class="fas fa-map-marker-alt mt-1 shrink-0" style="color:#B89A72;"></i>
+                            <div class="text-sm" style="color:#5a5e7a;">
+                                <span class="block font-semibold text-[#242844] mb-0.5">Kantor Samarinda</span>
+                                {!! $footerContents['footer_address_2'] !!}
+                            </div>
+                        </li>
+                        @endif
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone shrink-0" style="color:#B89A72;"></i>
+                            <a href="tel:{{ preg_replace('/[^+0-9]/', '', $footerContents['footer_phone']) }}" class="text-sm transition-colors hover:text-[#B89A72]" style="color:#5a5e7a;">{{ $footerContents['footer_phone'] }}</a>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i class="fas fa-phone flex-shrink-0" style="color:#B89A72;"></i>
-                            <a href="tel:+62211234567" class="text-sm transition-colors hover:text-[#B89A72]" style="color:#5a5e7a;">+62 21 1234 5678</a>
+                            <i class="fas fa-envelope shrink-0" style="color:#B89A72;"></i>
+                            <a href="mailto:{{ $footerContents['footer_email'] }}" class="text-sm transition-colors hover:text-[#B89A72]" style="color:#5a5e7a;">{{ $footerContents['footer_email'] }}</a>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i class="fas fa-envelope flex-shrink-0" style="color:#B89A72;"></i>
-                            <a href="mailto:info@mvplaw.id" class="text-sm transition-colors hover:text-[#B89A72]" style="color:#5a5e7a;">info@mvplaw.id</a>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fab fa-whatsapp flex-shrink-0" style="color:#25D366;"></i>
-                            <a href="https://wa.me/6281234567890" target="_blank" rel="noopener" class="text-sm transition-colors hover:text-[#25D366]" style="color:#5a5e7a;">+62 812 3456 7890</a>
+                            <i class="fab fa-whatsapp shrink-0" style="color:#25D366;"></i>
+                            <a href="{{ $footerContents['footer_whatsapp_link'] }}" target="_blank" rel="noopener" class="text-sm transition-colors hover:text-[#25D366]" style="color:#5a5e7a;">{{ $footerContents['footer_whatsapp'] }}</a>
                         </li>
                     </ul>
                     <div class="mt-5 text-xs px-3 py-2 rounded-lg" style="background:rgba(184,154,114,0.08); color:#8a7048; border:1px solid rgba(184,154,114,0.15);">
-                        <i class="fas fa-clock mr-1.5"></i>Senin–Jumat: 08.00–17.00 WIB
+                        <i class="fas fa-clock mr-1.5"></i>{{ $footerContents['footer_office_hours'] }}
                     </div>
                 </div>
             </div>
@@ -256,7 +268,7 @@
             <div class="mt-14 pt-8 border-t" style="border-color:rgba(184,154,114,0.12);">
                 <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                     <p class="text-xs" style="color:#5a5e7a;">
-                        &copy; {{ date('Y') }} MVP Law Firm. Hak cipta dilindungi undang-undang.
+                        &copy; {{ date('Y') }} {{ $footerContents['footer_copyright'] }}
                     </p>
                     <div class="flex gap-6">
                         <a href="#" class="text-xs transition-colors hover:text-[#B89A72]" style="color:#5a5e7a;">Kebijakan Privasi</a>

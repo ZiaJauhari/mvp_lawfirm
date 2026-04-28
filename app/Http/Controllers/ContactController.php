@@ -39,8 +39,7 @@ class ContactController extends Controller
             'message' => 'required|string|max:5000',
         ]);
 
-        // Here you would typically send an email or save to database
-        // For now, we'll just redirect back with a success message
+        \App\Models\ContactMessage::create($validated);
 
         return redirect()->route('contact')->with('success', 'Terima kasih atas pesan Anda. Kami akan menghubungi Anda segera!');
     }

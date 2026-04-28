@@ -63,7 +63,7 @@
                 <div class="grid lg:grid-cols-2">
                     {{-- Image --}}
                     <div class="h-72 lg:h-auto relative img-placeholder">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#242844]/60 to-transparent opacity-70"></div>
+                        <div class="absolute inset-0 bg-linear-to-t from-[#242844]/60 to-transparent opacity-70"></div>
                         <div class="absolute top-6 left-6">
                             <span class="badge" style="background:linear-gradient(135deg,#B89A72,#d4b896); color:#242844;">
                                 Unggulan
@@ -73,7 +73,7 @@
                     {{-- Content --}}
                     <div class="p-8 lg:p-12 flex flex-col justify-center">
                         <div class="flex items-center gap-4 text-xs mb-4" style="color:#5a5e7a;">
-                            <span><i class="far fa-calendar-alt mr-1"></i>{{ $featured->created_at->format('d M Y') }}</span>
+                            <span><i class="far fa-calendar-alt mr-1"></i>{{ $featured->created_at?->format('d M Y') }}</span>
                             <span><i class="far fa-clock mr-1"></i>8 menit baca</span>
                             <span><i class="far fa-eye mr-1"></i>{{ number_format(rand(1000,5000)) }} dilihat</span>
                         </div>
@@ -120,7 +120,7 @@
                     data-title="{{ strtolower($article->title) }}"
                     data-category="{{ strtolower($article->category ?? '') }}">
                     <div class="h-52 relative overflow-hidden img-placeholder">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#242844]/60 to-transparent opacity-60"></div>
+                        <div class="absolute inset-0 bg-linear-to-t from-[#242844]/60 to-transparent opacity-60"></div>
                         <div class="absolute top-4 left-4">
                             <span class="badge badge-accent text-[0.65rem]">
                                 {{ $article->category ?? 'Hukum' }}
@@ -131,7 +131,7 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-4 text-xs mb-3" style="color:#5a5e7a;">
-                            <span><i class="far fa-calendar-alt mr-1"></i>{{ $article->created_at->format('d M Y') }}</span>
+                            <span><i class="far fa-calendar-alt mr-1"></i>{{ $article->created_at?->format('d M Y') }}</span>
                             <span><i class="far fa-clock mr-1"></i>5 menit</span>
                         </div>
                         <h3 class="font-semibold text-base mb-3 line-clamp-2 transition-colors group-hover:text-[#8a7048]"

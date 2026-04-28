@@ -447,6 +447,13 @@
 
         .adm-input::placeholder, .adm-textarea::placeholder { color: var(--text-muted); }
         .adm-textarea { min-height: 120px; resize: vertical; line-height: 1.6; }
+        .adm-select {
+            padding-right: 2.25rem;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235a5e7a' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            cursor: pointer;
+        }
 
         .adm-form-hint { font-size: 0.72rem; color: var(--text-muted); margin-top: 0.3rem; }
 

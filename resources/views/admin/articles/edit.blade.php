@@ -173,8 +173,8 @@
             {{-- Info --}}
             <div class="adm-card">
                 <div class="adm-card-body" style="font-size:0.78rem; color:var(--text-muted); line-height:1.7;">
-                    <div>Dibuat: {{ $article->created_at->format('d M Y, H:i') }}</div>
-                    <div>Diperbarui: {{ $article->updated_at->format('d M Y, H:i') }}</div>
+                    <div>Dibuat: {{ $article->created_at?->format('d M Y, H:i') }}</div>
+                    <div>Diperbarui: {{ $article->updated_at?->format('d M Y, H:i') }}</div>
                     <div style="font-family:monospace; font-size:0.7rem; margin-top:0.25rem;">{{ $article->slug }}</div>
                 </div>
             </div>

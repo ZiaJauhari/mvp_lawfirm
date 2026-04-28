@@ -71,7 +71,7 @@
                         @endif
                     </td>
                     <td style="font-size:0.8rem; color:var(--text-muted);">
-                        {{ $article->user->name ?? 'Admin' }}
+                        {{ $article->user?->name ?? 'Admin' }}
                     </td>
                     <td>
                         <div style="display:flex; align-items:center; gap:0.3rem; font-size:0.78rem; color:var(--text-muted);">
@@ -87,7 +87,7 @@
                         @endif
                     </td>
                     <td style="font-size:0.75rem; color:var(--text-muted); white-space:nowrap;">
-                        {{ $article->created_at->format('d M Y') }}
+                        {{ $article->created_at?->format('d M Y') }}
                     </td>
                     <td>
                         <div style="display:flex; gap:0.375rem;">

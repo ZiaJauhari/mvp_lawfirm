@@ -19,37 +19,35 @@
         .animate-float-delayed { animation: float-slow 5s ease-in-out infinite 2s; }
     </style>
 
-    <section class="relative overflow-hidden min-h-[50vh] block pt-[4.5rem]" style="background-image: url('{{ asset('storage/images2.png') }}'); background-size: cover; background-position: center 25%; background-repeat: no-repeat;">
-        <div class="absolute inset-0 bg-[#FDFBFC]/85 filter backdrop-blur-[2px]"></div>
-        
+    <section class="relative overflow-hidden min-h-[50vh] block pt-28" style="background-image: url('{{ asset('images/images2.png') }}'); background-size: cover; background-position: center 25%; background-repeat: no-repeat;">
+        <div class="absolute inset-0 bg-linear-to-r from-[#FDFBFC]/95 via-[#FDFBFC]/70 to-[#FDFBFC]/20 filter backdrop-blur-[1px]"></div>
+
         {{-- Elite Background Decor --}}
         <div class="absolute inset-0 pointer-events-none">
             <div class="absolute top-[-25%] left-[-15%] w-[900px] h-[900px] bg-[#B89A72]/10 rounded-full filter blur-[180px]"></div>
         </div>
 
-        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pb-6" style="padding-top: 110px;">
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pb-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-                
+
                 {{-- ── LEFT CONTENT: EDITORIAL TYPOGRAPHY ── --}}
                 <div class="reveal">
                     {{-- Premium Badge --}}
                     <div class="inline-flex items-center px-4 py-1.5 rounded-full border border-gray-200 mb-8 w-fit bg-white/70 backdrop-blur-sm">
                         <div class="w-1.5 h-1.5 rounded-full bg-[#B89A72] mr-3"></div>
-                        <span class="text-[0.6rem] uppercase tracking-widest font-bold text-[#8a7048]">Firma Hukum Terkemuka</span>
+                        <span class="text-[0.6rem] uppercase tracking-widest font-bold text-[#8a7048]">{{ $contents['hero_badge'] ?? 'Keunggulan Hukum Terpercaya' }}</span>
                     </div>
 
                     {{-- 3-Line Precise Serif Headline --}}
                     <div class="mb-8">
-                        <div class="font-serif leading-[1.0] tracking-tight">
-                            <span class="block text-4xl md:text-5xl lg:text-7xl text-[#1a1c2e] italic mb-1">Membela</span>
-                            <span class="block text-5xl md:text-6xl lg:text-[5.5rem] text-[#1a1c2e] font-bold mb-2">Membela Hak &</span>
-                            <span class="block text-5xl md:text-6xl lg:text-[5.5rem] text-[#B89A72] font-bold">Masa Depan<br>Anda</span>
+                        <div class="font-serif leading-none tracking-tight text-5xl md:text-6xl lg:text-[5.5rem] font-bold text-[#1a1c2e]">
+                            {!! $contents['hero_title'] ?? 'Membela Hak &<br><span style="color:#B89A72;">Masa Depan Anda</span>' !!}
                         </div>
                     </div>
 
                     {{-- Refined Description --}}
                     <p class="text-base leading-relaxed text-[#5a5e7a] mb-12 max-w-lg font-medium">
-                        Menghadirkan keunggulan hukum dengan integritas tinggi. Kami berdedikasi penuh untuk melindungi setiap aspek kepentingan hukum Anda di setiap langkah.
+                        {{ $contents['hero_subtitle'] ?? 'Layanan hukum profesional dengan integritas dan keunggulan. Kami menyediakan solusi hukum komprehensif untuk individu dan bisnis.' }}
                     </p>
 
                     {{-- Action Buttons: Bronze Primary --}}
@@ -127,10 +125,10 @@
                 <span class="text-uppercase-accent mb-3 block">Layanan Kami</span>
                 <h2 class="text-4xl md:text-5xl font-bold mb-4"
                     style="font-family:'Playfair Display',serif; color:#242844;">
-                    Bidang <span style="color:#B89A72;">Praktik</span>
+                    {!! $contents['services_title'] ?? 'Bidang <span style="color:#B89A72;">Praktik</span>' !!}
                 </h2>
                 <p class="text-lg max-w-2xl mx-auto" style="color:#5a5e7a;">
-                    Layanan hukum komprehensif yang disesuaikan dengan kebutuhan Anda
+                    {{ $contents['services_subtitle'] ?? 'Layanan hukum komprehensif yang disesuaikan dengan kebutuhan Anda' }}
                 </p>
             </div>
 
@@ -179,21 +177,21 @@
                     <span class="text-uppercase-accent mb-3 block">Mengapa Memilih Kami</span>
                     <h2 class="text-4xl md:text-5xl font-bold mb-6"
                         style="font-family:'Playfair Display',serif; color:#242844;">
-                        Pengalaman &amp;<br><span style="color:#B89A72;">Keunggulan</span>
+                        {!! $contents['why_title'] ?? 'Pengalaman &amp;<br><span style="color:#B89A72;">Keunggulan</span>' !!}
                     </h2>
                     <p class="text-base leading-relaxed mb-8" style="color:#5a5e7a;">
-                        Dengan pengalaman gabungan lebih dari 25 tahun, tim pengacara berdedikasi kami telah berhasil menangani ribuan kasus, memperoleh kepercayaan klien di seluruh Indonesia.
+                        {{ $contents['why_description'] ?? 'Dengan pengalaman gabungan lebih dari 25 tahun, tim pengacara berdedikasi kami telah berhasil menangani ribuan kasus, memperoleh kepercayaan klien di seluruh negeri.' }}
                     </p>
 
                     <div class="space-y-5 stagger-children">
                         @foreach ([
-                            ['check-circle', 'Rekam Jejak Terbukti', 'Tingkat keberhasilan 98% di semua bidang praktik hukum kami'],
-                            ['user-shield', 'Perhatian Personal', 'Setiap kasus mendapatkan fokus dan strategi yang berdedikasi penuh'],
-                            ['clock', 'Ketersediaan 24/7', 'Dukungan hukum darurat 24 jam untuk masalah mendesak Anda'],
-                            ['handshake', 'Biaya Transparan', 'Tidak ada biaya tersembunyi — konsultasi awal selalu gratis'],
+                            ['check-circle', $contents['home_feat_1_title'] ?? 'Rekam Jejak Terbukti', $contents['home_feat_1_desc'] ?? 'Tingkat keberhasilan 98% di semua bidang praktik hukum kami'],
+                            ['user-shield', $contents['home_feat_2_title'] ?? 'Perhatian Personal', $contents['home_feat_2_desc'] ?? 'Setiap kasus mendapatkan fokus dan strategi yang berdedikasi penuh'],
+                            ['clock', $contents['home_feat_3_title'] ?? 'Ketersediaan 24/7', $contents['home_feat_3_desc'] ?? 'Dukungan hukum darurat 24 jam untuk masalah mendesak Anda'],
+                            ['handshake', $contents['home_feat_4_title'] ?? 'Biaya Transparan', $contents['home_feat_4_desc'] ?? 'Tidak ada biaya tersembunyi — konsultasi awal selalu gratis'],
                         ] as $feat)
                         <div class="flex items-start gap-4 reveal">
-                            <div class="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center border"
+                            <div class="shrink-0 w-11 h-11 rounded-xl flex items-center justify-center border"
                                 style="background:linear-gradient(135deg,rgba(184,154,114,0.15),rgba(212,184,150,0.1)); border-color:rgba(184,154,114,0.25);">
                                 <i class="fas fa-{{ $feat[0] }}" style="color:#B89A72;"></i>
                             </div>
@@ -215,7 +213,7 @@
                 {{-- Visual --}}
                 <div class="relative reveal-right">
                     <div class="rounded-3xl overflow-hidden holographic shadow-2xl bg-cover bg-center"
-                        style="background: linear-gradient(135deg, rgba(36,40,68,0.7), rgba(45,48,80,0.8)), url('{{ asset('storage/bookes.jpg') }}'); background-size: cover; background-position: center; min-height:380px;">
+                        style="background: linear-gradient(135deg, rgba(36,40,68,0.7), rgba(45,48,80,0.8)), url('{{ asset('images/bookes.jpg') }}'); background-size: cover; background-position: center; min-height:380px;">
                         <div class="p-10 h-full flex flex-col justify-center items-center text-center">
                             <div class="w-24 h-24 rounded-2xl flex items-center justify-center mb-6 animate-pulse-glow"
                                 style="background:linear-gradient(135deg,rgba(184,154,114,0.2),rgba(212,184,150,0.15)); border:1.5px solid rgba(184,154,114,0.3);">
@@ -269,10 +267,10 @@
                 <span class="text-uppercase-accent mb-3 block">Tim Kami</span>
                 <h2 class="text-4xl md:text-5xl font-bold mb-4"
                     style="font-family:'Playfair Display',serif; color:#242844;">
-                    Temui <span style="color:#B89A72;">Para Ahli</span> Kami
+                    {!! $contents['team_title'] ?? 'Temui <span style="color:#B89A72;">Para Ahli</span> Kami' !!}
                 </h2>
                 <p class="text-lg max-w-2xl mx-auto" style="color:#5a5e7a;">
-                    Profesional berdedikasi yang berkomitmen pada kesuksesan Anda
+                    {{ $contents['team_subtitle'] ?? 'Profesional berdedikasi yang berkomitmen pada kesuksesan Anda' }}
                 </p>
             </div>
 
@@ -290,7 +288,7 @@
                                 {{ strtoupper(substr($team->name, 0, 1)) }}{{ strtoupper(substr(explode(' ', $team->name)[1] ?? '', 0, 1)) }}
                             </div>
                         @endif
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#242844]/80 via-[#242844]/20 to-transparent"></div>
+                        <div class="absolute inset-0 bg-linear-to-t from-[#242844]/80 via-[#242844]/20 to-transparent"></div>
                         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                             style="background:linear-gradient(135deg,rgba(184,154,114,0.1),transparent);"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-5">
@@ -345,9 +343,9 @@
                 <span class="text-uppercase-accent mb-3 block">Testimoni</span>
                 <h2 class="text-4xl md:text-5xl font-bold mb-4"
                     style="font-family:'Playfair Display',serif; color:#242844;">
-                    Apa Kata <span style="color:#B89A72;">Klien</span> Kami
+                    {!! $contents['testimonials_title'] ?? 'Apa Kata <span style="color:#B89A72;">Klien</span> Kami' !!}
                 </h2>
-                <p class="text-lg max-w-2xl mx-auto" style="color:#5a5e7a;">Kisah nyata dari klien nyata yang kami bantu</p>
+                <p class="text-lg max-w-2xl mx-auto" style="color:#5a5e7a;">{{ $contents['testimonials_subtitle'] ?? 'Kisah nyata dari klien nyata' }}</p>
             </div>
 
             <div class="grid gap-8 md:grid-cols-3 stagger-children">
@@ -380,10 +378,10 @@
                     <span class="text-uppercase-accent mb-2 block">Wawasan Hukum</span>
                     <h2 class="text-4xl md:text-5xl font-bold"
                         style="font-family:'Playfair Display',serif; color:#242844;">
-                        Artikel <span style="color:#B89A72;">Terbaru</span>
+                        {!! $contents['articles_title'] ?? 'Artikel <span style="color:#B89A72;">Terbaru</span>' !!}
                     </h2>
                 </div>
-                <a href="{{ route('articles') }}" class="btn-outline btn-magnetic flex-shrink-0">
+                <a href="{{ route('articles') }}" class="btn-outline btn-magnetic shrink-0">
                     Lihat Semua <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -392,7 +390,7 @@
                 @foreach ($articles->take(3) as $article)
                 <article class="group glass rounded-2xl overflow-hidden card-lift holographic reveal">
                     <div class="h-52 relative overflow-hidden img-placeholder">
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#242844]/60 to-transparent opacity-60"></div>
+                        <div class="absolute inset-0 bg-linear-to-t from-[#242844]/60 to-transparent opacity-60"></div>
                         <div class="absolute top-4 left-4">
                             <span class="badge badge-accent text-[0.65rem]">
                                 {{ $article->category ?? 'Hukum' }}
@@ -403,7 +401,7 @@
                     </div>
                     <div class="p-6">
                         <div class="flex items-center gap-4 text-xs mb-3" style="color:#5a5e7a;">
-                            <span><i class="far fa-calendar-alt mr-1"></i>{{ $article->created_at->format('d M Y') }}</span>
+                            <span><i class="far fa-calendar-alt mr-1"></i>{{ $article->created_at?->format('d M Y') }}</span>
                             <span><i class="far fa-clock mr-1"></i>5 menit</span>
                         </div>
                         <h3 class="font-semibold text-base mb-3 line-clamp-2 transition-colors group-hover:text-[#8a7048]"

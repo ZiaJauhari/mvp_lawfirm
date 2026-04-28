@@ -34,6 +34,6 @@ class ServiceController extends Controller
     public function show($slug)
     {
         $service = Service::where('slug', $slug)->where('is_active', true)->firstOrFail();
-        return view('service-detail', compact('service'));
+        return view('services.show', compact('service'));
     }
 }

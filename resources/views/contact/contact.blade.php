@@ -38,34 +38,47 @@
                     <div class="space-y-6 mb-8">
                         <div class="flex items-start space-x-4">
                             <div
-                                class="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#B89A72]/20 to-[#d4b896]/20 flex items-center justify-center border border-[#B89A72]/30 pulse-ring">
+                                class="shrink-0 w-12 h-12 rounded-xl bg-linear-to-br from-[#B89A72]/20 to-[#d4b896]/20 flex items-center justify-center border border-[#B89A72]/30 pulse-ring">
                                 <i class="fas fa-map-marker-alt text-[#8a7048]"></i>
                             </div>
                             <div>
-                                <h4 class="text-[#242844] font-semibold mb-1">Alamat Kantor</h4>
-                                <p class="text-[#5a5e7a] text-sm">123 Legal Avenue, Suite 500<br>New York, NY 10001</p>
+                                <h4 class="text-[#242844] font-semibold mb-1">Kantor Jakarta</h4>
+                                <p class="text-[#5a5e7a] text-sm">{!! $footerContents['footer_address'] !!}</p>
                             </div>
                         </div>
 
+                        @if(!empty($footerContents['footer_address_2']))
                         <div class="flex items-start space-x-4">
                             <div
-                                class="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#B89A72]/20 to-[#d4b896]/20 flex items-center justify-center border border-[#B89A72]/30 pulse-ring">
+                                class="shrink-0 w-12 h-12 rounded-xl bg-linear-to-br from-[#B89A72]/20 to-[#d4b896]/20 flex items-center justify-center border border-[#B89A72]/30 pulse-ring">
+                                <i class="fas fa-map-marker-alt text-[#8a7048]"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-[#242844] font-semibold mb-1">Kantor Samarinda</h4>
+                                <p class="text-[#5a5e7a] text-sm">{!! $footerContents['footer_address_2'] !!}</p>
+                            </div>
+                        </div>
+                        @endif
+
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="shrink-0 w-12 h-12 rounded-xl bg-linear-to-br from-[#B89A72]/20 to-[#d4b896]/20 flex items-center justify-center border border-[#B89A72]/30 pulse-ring">
                                 <i class="fas fa-phone text-[#8a7048]"></i>
                             </div>
                             <div>
                                 <h4 class="text-[#242844] font-semibold mb-1">Telepon</h4>
-                                <p class="text-[#5a5e7a] text-sm">(555) 123-4567<br>Sen - Jum: 9:00 - 18:00</p>
+                                <p class="text-[#5a5e7a] text-sm">{{ $footerContents['footer_phone'] }}<br>{{ $footerContents['footer_office_hours'] }}</p>
                             </div>
                         </div>
 
                         <div class="flex items-start space-x-4">
                             <div
-                                class="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#B89A72]/20 to-[#d4b896]/20 flex items-center justify-center border border-[#B89A72]/30 pulse-ring">
+                                class="shrink-0 w-12 h-12 rounded-xl bg-linear-to-br from-[#B89A72]/20 to-[#d4b896]/20 flex items-center justify-center border border-[#B89A72]/30 pulse-ring">
                                 <i class="fas fa-envelope text-[#8a7048]"></i>
                             </div>
                             <div>
                                 <h4 class="text-[#242844] font-semibold mb-1">Email</h4>
-                                <p class="text-[#5a5e7a] text-sm">info@mvplawfirm.com<br>support@mvplawfirm.com</p>
+                                <p class="text-[#5a5e7a] text-sm">{{ $footerContents['footer_email'] }}</p>
                             </div>
                         </div>
                     </div>
@@ -74,19 +87,19 @@
                     <div>
                         <h4 class="text-[#242844] font-semibold mb-4">Ikuti Kami</h4>
                         <div class="flex space-x-3">
-                            <a href="#"
+                            <a href="{{ $footerContents['footer_linkedin'] }}"
                                 class="w-10 h-10 rounded-xl bg-[#FDFBFC] flex items-center justify-center hover:bg-[#8a7048]/20 transition-colors border border-[#8a7048]/20">
                                 <i class="fab fa-linkedin-in text-[#8a7048]"></i>
                             </a>
-                            <a href="#"
+                            <a href="{{ $footerContents['footer_twitter'] }}"
                                 class="w-10 h-10 rounded-xl bg-[#FDFBFC] flex items-center justify-center hover:bg-[#8a7048]/20 transition-colors border border-[#8a7048]/20">
                                 <i class="fab fa-twitter text-[#8a7048]"></i>
                             </a>
-                            <a href="#"
+                            <a href="{{ $footerContents['footer_facebook'] }}"
                                 class="w-10 h-10 rounded-xl bg-[#FDFBFC] flex items-center justify-center hover:bg-[#8a7048]/20 transition-colors border border-[#8a7048]/20">
                                 <i class="fab fa-facebook-f text-[#8a7048]"></i>
                             </a>
-                            <a href="#"
+                            <a href="{{ $footerContents['footer_instagram'] }}"
                                 class="w-10 h-10 rounded-xl bg-[#FDFBFC] flex items-center justify-center hover:bg-[#8a7048]/20 transition-colors border border-[#8a7048]/20">
                                 <i class="fab fa-instagram text-[#8a7048]"></i>
                             </a>
@@ -177,8 +190,8 @@
     <section class="section-padding relative bg-[#FDFBFC]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 reveal">
-                <h2 class="text-3xl font-bold text-[#242844] mb-4">Kunjungi Kantor Kami</h2>
-                <p class="text-[#5a5e7a]">Terletak strategis di pusat kota</p>
+                <h2 class="text-3xl font-bold text-[#242844] mb-4">{{ $contents['contact_map_title'] ?? 'Kunjungi Kantor Kami' }}</h2>
+                <p class="text-[#5a5e7a]">{{ $contents['contact_map_subtitle'] ?? 'Terletak strategis di pusat kota' }}</p>
             </div>
             <div class="glass rounded-2xl overflow-hidden holographic reveal">
                 <div class="h-96 img-placeholder flex items-center justify-center">
@@ -197,34 +210,26 @@
         <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12 reveal">
                 <span class="badge badge-accent mb-4 holographic">FAQ</span>
-                <h2 class="text-3xl font-bold text-[#242844] mb-4">Pertanyaan yang Sering Diajukan</h2>
-                <p class="text-[#5a5e7a]">Temukan jawaban untuk pertanyaan umum tentang layanan kami</p>
+                <h2 class="text-3xl font-bold text-[#242844] mb-4">{{ $contents['contact_faq_section_title'] ?? 'Pertanyaan yang Sering Diajukan' }}</h2>
+                <p class="text-[#5a5e7a]">{{ $contents['contact_faq_section_subtitle'] ?? 'Temukan jawaban untuk pertanyaan umum tentang layanan kami' }}</p>
             </div>
 
             <div class="space-y-4 stagger-children">
                 <div class="glass rounded-xl p-6 holographic reveal">
-                    <h4 class="text-[#242844] font-semibold mb-2">Bagaimana cara menjadwalkan konsultasi?</h4>
-                    <p class="text-[#5a5e7a] text-sm">Anda dapat menjadwalkan konsultasi dengan mengisi formulir kontak,
-                        menelepon kantor kami secara langsung, atau mengirim email kepada kami. Kami menawarkan konsultasi
-                        tatap muka dan virtual.</p>
+                    <h4 class="text-[#242844] font-semibold mb-2">{{ $contents['contact_faq_1_q'] ?? 'Bagaimana cara menjadwalkan konsultasi?' }}</h4>
+                    <p class="text-[#5a5e7a] text-sm">{{ $contents['contact_faq_1_a'] ?? 'Anda dapat menjadwalkan konsultasi dengan mengisi formulir kontak, menelepon kantor kami secara langsung, atau mengirim email kepada kami. Kami menawarkan konsultasi tatap muka dan virtual.' }}</p>
                 </div>
                 <div class="glass rounded-xl p-6 holographic reveal">
-                    <h4 class="text-[#242844] font-semibold mb-2">Apa yang harus saya bawa ke pertemuan pertama?</h4>
-                    <p class="text-[#5a5e7a] text-sm">Harap bawa dokumen apa pun yang relevan dengan kasus Anda,
-                        identifikasi, dan daftar pertanyaan yang ingin Anda diskusikan. Ini membantu kami memberikan saran
-                        yang paling akurat.</p>
+                    <h4 class="text-[#242844] font-semibold mb-2">{{ $contents['contact_faq_2_q'] ?? 'Apa yang harus saya bawa ke pertemuan pertama?' }}</h4>
+                    <p class="text-[#5a5e7a] text-sm">{{ $contents['contact_faq_2_a'] ?? 'Harap bawa dokumen apa pun yang relevan dengan kasus Anda, identifikasi, dan daftar pertanyaan yang ingin Anda diskusikan. Ini membantu kami memberikan saran yang paling akurat.' }}</p>
                 </div>
                 <div class="glass rounded-xl p-6 holographic reveal">
-                    <h4 class="text-[#242844] font-semibold mb-2">Bagaimana struktur biaya Anda?</h4>
-                    <p class="text-[#5a5e7a] text-sm">Struktur biaya kami bervariasi tergantung pada jenis kasus. Kami
-                        menawarkan tarif per jam, biaya tetap, dan pengaturan kontingensi. Kami akan membahas semua biaya
-                        secara transparan selama konsultasi Anda.</p>
+                    <h4 class="text-[#242844] font-semibold mb-2">{{ $contents['contact_faq_3_q'] ?? 'Bagaimana struktur biaya Anda?' }}</h4>
+                    <p class="text-[#5a5e7a] text-sm">{{ $contents['contact_faq_3_a'] ?? 'Struktur biaya kami bervariasi tergantung pada jenis kasus. Kami menawarkan tarif per jam, biaya tetap, dan pengaturan kontingensi. Kami akan membahas semua biaya secara transparan selama konsultasi Anda.' }}</p>
                 </div>
                 <div class="glass rounded-xl p-6 holographic reveal">
-                    <h4 class="text-[#242844] font-semibold mb-2">Apakah Anda menawarkan rencana pembayaran?</h4>
-                    <p class="text-[#5a5e7a] text-sm">Ya, kami memahami bahwa layanan hukum dapat menjadi investasi yang
-                        signifikan. Kami menawarkan rencana pembayaran fleksibel untuk membantu membuat representasi hukum
-                        berkualitas dapat diakses.</p>
+                    <h4 class="text-[#242844] font-semibold mb-2">{{ $contents['contact_faq_4_q'] ?? 'Apakah Anda menawarkan rencana pembayaran?' }}</h4>
+                    <p class="text-[#5a5e7a] text-sm">{{ $contents['contact_faq_4_a'] ?? 'Ya, kami memahami bahwa layanan hukum dapat menjadi investasi yang signifikan. Kami menawarkan rencana pembayaran fleksibel untuk membantu membuat representasi hukum berkualitas dapat diakses.' }}</p>
                 </div>
             </div>
         </div>

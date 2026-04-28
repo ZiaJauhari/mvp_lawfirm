@@ -8,14 +8,11 @@
         <h1 class="adm-page-title">Konten Halaman</h1>
         <p class="adm-page-subtitle">Edit teks dan konten yang tampil di website</p>
     </div>
-    <a href="{{ route('admin.page-contents.create', ['page' => $page]) }}" class="adm-btn adm-btn-primary">
-        <i class="fas fa-plus"></i> Tambah Item Konten
-    </a>
 </div>
 
 {{-- Page Tabs --}}
 <div style="display:flex; gap:0.375rem; flex-wrap:wrap; margin-bottom:1.5rem;">
-    @foreach (['home' => 'Beranda', 'services' => 'Layanan', 'about' => 'Tentang Kami', 'team' => 'Tim', 'articles' => 'Artikel', 'contact' => 'Kontak'] as $slug => $label)
+    @foreach (['home' => 'Beranda', 'services' => 'Layanan', 'about' => 'Tentang Kami', 'team' => 'Tim', 'articles' => 'Artikel', 'contact' => 'Kontak', 'footer' => 'Footer'] as $slug => $label)
     <a href="{{ route('admin.page-contents.index', ['page' => $slug]) }}"
        class="adm-btn {{ $page === $slug ? 'adm-btn-primary' : 'adm-btn-ghost' }}"
        style="font-size:0.78rem; padding:0.45rem 0.9rem;">

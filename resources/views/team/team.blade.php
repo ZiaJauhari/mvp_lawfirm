@@ -54,7 +54,7 @@
                                 {{ strtoupper(substr($team->name, 0, 1)) }}{{ strtoupper(substr(explode(' ', $team->name)[1] ?? '', 0, 1)) }}
                             </div>
                         @endif
-                        <div class="absolute inset-0 bg-gradient-to-t from-[#242844]/80 via-[#242844]/20 to-transparent"></div>
+                        <div class="absolute inset-0 bg-linear-to-t from-[#242844]/80 via-[#242844]/20 to-transparent"></div>
                         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400"
                             style="background:linear-gradient(135deg,rgba(184,154,114,0.1),transparent);"></div>
                         <div class="absolute bottom-0 left-0 right-0 p-5">

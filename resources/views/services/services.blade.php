@@ -39,7 +39,7 @@
                     <span class="service-number">{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</span>
                     <div class="tilt-inner p-8">
                         <div class="flex items-center mb-6">
-                            <div class="icon-container flex-shrink-0">
+                            <div class="icon-container shrink-0">
                                 <i class="fas {{ $service->icon }}"></i>
                             </div>
                             <div class="ml-4">
@@ -96,10 +96,10 @@
                     style="background:linear-gradient(90deg,transparent,rgba(184,154,114,0.4) 20%,rgba(184,154,114,0.4) 80%,transparent); z-index:0;"></div>
 
                 @foreach ([
-                    ['fas fa-phone', '01', 'Konsultasi', 'Konsultasi awal gratis untuk memahami kebutuhan hukum Anda secara menyeluruh'],
-                    ['fas fa-search', '02', 'Analisis', 'Analisis kasus mendalam dan perumusan strategi hukum yang tepat sasaran'],
-                    ['fas fa-gavel', '03', 'Eksekusi', 'Representasi hukum profesional dan manajemen kasus yang terstruktur'],
-                    ['fas fa-check-double', '04', 'Resolusi', 'Mencapai hasil terbaik dan memastikan kepuasan klien sepenuhnya'],
+                    ['fas fa-phone', '01', $contents['services_process_1_title'] ?? 'Konsultasi', $contents['services_process_1_desc'] ?? 'Konsultasi awal gratis untuk memahami kebutuhan hukum Anda secara menyeluruh'],
+                    ['fas fa-search', '02', $contents['services_process_2_title'] ?? 'Analisis', $contents['services_process_2_desc'] ?? 'Analisis kasus mendalam dan perumusan strategi hukum yang tepat sasaran'],
+                    ['fas fa-gavel', '03', $contents['services_process_3_title'] ?? 'Eksekusi', $contents['services_process_3_desc'] ?? 'Representasi hukum profesional dan manajemen kasus yang terstruktur'],
+                    ['fas fa-check-double', '04', $contents['services_process_4_title'] ?? 'Resolusi', $contents['services_process_4_desc'] ?? 'Mencapai hasil terbaik dan memastikan kepuasan klien sepenuhnya'],
                 ] as [$icon, $num, $title, $desc])
                 <div class="text-center reveal relative z-10">
                     <div class="process-step-icon mb-5 pulse-ring" style="position:relative; z-index:1;">
@@ -135,20 +135,25 @@
                 {{-- Basic --}}
                 <div class="glass rounded-2xl p-8 card-lift holographic reveal">
                     <div class="mb-6">
-                        <h3 class="text-xl font-bold mb-1" style="color:#242844; font-family:'Playfair Display',serif;">Dasar</h3>
-                        <p class="text-sm" style="color:#5a5e7a;">Untuk masalah hukum sederhana</p>
+                        <h3 class="text-xl font-bold mb-1" style="color:#242844; font-family:'Playfair Display',serif;">{{ $contents['services_pricing_1_title'] ?? 'Dasar' }}</h3>
+                        <p class="text-sm" style="color:#5a5e7a;">{{ $contents['services_pricing_1_desc'] ?? 'Untuk masalah hukum sederhana' }}</p>
                     </div>
                     <div class="mb-6 text-center py-5 rounded-xl" style="background:rgba(184,154,114,0.06); border:1px solid rgba(184,154,114,0.12);">
                         <div class="text-2xl font-bold mb-1" style="color:#8a7048; font-family:'Playfair Display',serif;">
-                            Hubungi Kami
+                            {{ $contents['services_pricing_1_price'] ?? 'Hubungi Kami' }}
                         </div>
-                        <div class="text-xs" style="color:#5a5e7a;">Harga sesuai kebutuhan</div>
+                        <div class="text-xs" style="color:#5a5e7a;">{{ $contents['services_pricing_1_subprice'] ?? 'Harga sesuai kebutuhan' }}</div>
                     </div>
                     <ul class="space-y-3 mb-8">
-                        @foreach (['Konsultasi Awal Gratis', 'Tinjauan Dokumen', 'Saran Hukum Dasar', 'Dukungan via Email'] as $item)
+                        @php
+                            $features1 = explode("\n", $contents['services_pricing_1_features'] ?? "Konsultasi Awal Gratis\nTinjauan Dokumen\nSaran Hukum Dasar\nDukungan via Email");
+                        @endphp
+                        @foreach ($features1 as $item)
+                        @if(trim($item))
                         <li class="flex items-center gap-2 text-sm" style="color:#5a5e7a;">
-                            <i class="fas fa-check" style="color:#8a7048;"></i>{{ $item }}
+                            <i class="fas fa-check" style="color:#8a7048;"></i>{{ trim($item) }}
                         </li>
+                        @endif
                         @endforeach
                     </ul>
                     <a href="{{ route('contact') }}" class="btn-outline w-full text-center block">Mulai Sekarang</a>
@@ -162,20 +167,25 @@
                     <div class="absolute inset-0 rounded-2xl pointer-events-none"
                         style="background:linear-gradient(to bottom,rgba(184,154,114,0.06),transparent);"></div>
                     <div class="relative mb-6">
-                        <h3 class="text-xl font-bold mb-1" style="color:#242844; font-family:'Playfair Display',serif;">Profesional</h3>
-                        <p class="text-sm" style="color:#5a5e7a;">Untuk kebutuhan hukum menengah-kompleks</p>
+                        <h3 class="text-xl font-bold mb-1" style="color:#242844; font-family:'Playfair Display',serif;">{{ $contents['services_pricing_2_title'] ?? 'Profesional' }}</h3>
+                        <p class="text-sm" style="color:#5a5e7a;">{{ $contents['services_pricing_2_desc'] ?? 'Untuk kebutuhan hukum menengah-kompleks' }}</p>
                     </div>
                     <div class="relative mb-6 text-center py-5 rounded-xl" style="background:rgba(184,154,114,0.1); border:1px solid rgba(184,154,114,0.25);">
                         <div class="text-2xl font-bold mb-1" style="color:#8a7048; font-family:'Playfair Display',serif;">
-                            Hubungi Kami
+                            {{ $contents['services_pricing_2_price'] ?? 'Hubungi Kami' }}
                         </div>
-                        <div class="text-xs" style="color:#5a5e7a;">Konsultasi &amp; penawaran gratis</div>
+                        <div class="text-xs" style="color:#5a5e7a;">{{ $contents['services_pricing_2_subprice'] ?? 'Konsultasi & penawaran gratis' }}</div>
                     </div>
                     <ul class="relative space-y-3 mb-8">
-                        @foreach (['Semua di Paket Dasar', 'Strategi Kasus Mendalam', 'Representasi Pengadilan', 'Dukungan Prioritas', 'Persiapan &amp; Review Dokumen'] as $item)
+                        @php
+                            $features2 = explode("\n", $contents['services_pricing_2_features'] ?? "Semua di Paket Dasar\nStrategi Kasus Mendalam\nRepresentasi Pengadilan\nDukungan Prioritas\nPersiapan & Review Dokumen");
+                        @endphp
+                        @foreach ($features2 as $item)
+                        @if(trim($item))
                         <li class="flex items-center gap-2 text-sm" style="color:#5a5e7a;">
-                            <i class="fas fa-check" style="color:#8a7048;"></i>{!! $item !!}
+                            <i class="fas fa-check" style="color:#8a7048;"></i>{!! trim($item) !!}
                         </li>
+                        @endif
                         @endforeach
                     </ul>
                     <a href="{{ route('contact') }}" class="btn-primary w-full text-center block relative">Mulai Sekarang</a>
@@ -184,20 +194,25 @@
                 {{-- Enterprise --}}
                 <div class="glass rounded-2xl p-8 card-lift holographic reveal">
                     <div class="mb-6">
-                        <h3 class="text-xl font-bold mb-1" style="color:#242844; font-family:'Playfair Display',serif;">Enterprise</h3>
-                        <p class="text-sm" style="color:#5a5e7a;">Untuk bisnis &amp; korporasi besar</p>
+                        <h3 class="text-xl font-bold mb-1" style="color:#242844; font-family:'Playfair Display',serif;">{{ $contents['services_pricing_3_title'] ?? 'Enterprise' }}</h3>
+                        <p class="text-sm" style="color:#5a5e7a;">{{ $contents['services_pricing_3_desc'] ?? 'Untuk bisnis & korporasi besar' }}</p>
                     </div>
                     <div class="mb-6 text-center py-5 rounded-xl" style="background:rgba(36,40,68,0.05); border:1px solid rgba(36,40,68,0.1);">
                         <div class="text-2xl font-bold mb-1" style="color:#242844; font-family:'Playfair Display',serif;">
-                            Kustom
+                            {{ $contents['services_pricing_3_price'] ?? 'Kustom' }}
                         </div>
-                        <div class="text-xs" style="color:#5a5e7a;">Sesuai skala &amp; kebutuhan bisnis</div>
+                        <div class="text-xs" style="color:#5a5e7a;">{{ $contents['services_pricing_3_subprice'] ?? 'Sesuai skala & kebutuhan bisnis' }}</div>
                     </div>
                     <ul class="space-y-3 mb-8">
-                        @foreach (['Semua di Paket Profesional', 'Tim Hukum Khusus', 'Dukungan Prioritas 24/7', 'Manajemen Kepatuhan', 'Solusi Hukum Kustom'] as $item)
+                        @php
+                            $features3 = explode("\n", $contents['services_pricing_3_features'] ?? "Semua di Paket Profesional\nTim Hukum Khusus\nDukungan Prioritas 24/7\nManajemen Kepatuhan\nSolusi Hukum Kustom");
+                        @endphp
+                        @foreach ($features3 as $item)
+                        @if(trim($item))
                         <li class="flex items-center gap-2 text-sm" style="color:#5a5e7a;">
-                            <i class="fas fa-check" style="color:#8a7048;"></i>{{ $item }}
+                            <i class="fas fa-check" style="color:#8a7048;"></i>{{ trim($item) }}
                         </li>
+                        @endif
                         @endforeach
                     </ul>
                     <a href="{{ route('contact') }}" class="btn-outline w-full text-center block">Hubungi Kami</a>
