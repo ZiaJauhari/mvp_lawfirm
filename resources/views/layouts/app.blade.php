@@ -28,7 +28,12 @@
     {{-- Font Awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    {{-- Favicon --}}
+    <link rel="icon" type="image/png" href="{{ asset('storage/logo_lawfirm.png') }}">
+
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+
 </head>
 
 <body class="font-sans antialiased min-h-screen flex flex-col" style="background-color:#FDFBFC; color:#242844;">
