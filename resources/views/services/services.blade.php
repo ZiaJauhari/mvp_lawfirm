@@ -30,35 +30,41 @@
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 stagger-children">
                 @foreach ($services as $index => $service)
-                <div class="group glass rounded-2xl overflow-hidden card-lift glow-hover holographic tilt reveal relative">
-                    <span class="service-number">{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</span>
-                    <div class="tilt-inner p-8">
+                <div class="group glass rounded-2xl card-lift glow-hover holographic tilt reveal relative flex flex-col h-full overflow-visible" style="isolation: isolate;">
+                    <span class="service-number z-0">{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</span>
+                    <div class="tilt-inner p-8 flex flex-col grow relative z-10">
                         <div class="flex items-center mb-6">
-                            <div class="icon-container shrink-0">
+                            <div class="icon-container shrink-0 shadow-lg">
                                 <i class="fas {{ $service->icon }}"></i>
                             </div>
                             <div class="ml-4">
-                                <h3 class="text-lg font-semibold transition-colors group-hover:text-[#8a7048]"
+                                <h3 class="text-xl font-bold transition-colors group-hover:text-[#8a7048]"
                                     style="color:#242844; font-family:'Playfair Display',serif;">
                                     {{ $service->title }}
                                 </h3>
                             </div>
                         </div>
-                        <p class="text-sm leading-relaxed mb-3" style="color:#5a5e7a;">{{ $service->short_description }}</p>
-                        <p class="text-sm leading-relaxed mb-6" style="color:#363a5c;">{{ $service->description }}</p>
+                        
+                        <div class="mb-6 grow">
+                            @if($service->short_description && $service->short_description != $service->description)
+                                <p class="text-xs uppercase tracking-widest font-bold mb-2" style="color:#B89A72;">Overview</p>
+                                <p class="text-sm leading-relaxed mb-4" style="color:#5a5e7a;">{{ $service->short_description }}</p>
+                            @endif
+                            <p class="text-sm leading-relaxed" style="color:#363a5c;">{{ $service->description }}</p>
+                        </div>
 
-                        <div class="space-y-2 mb-6">
+                        <div class="space-y-3 mb-8 pt-4 border-t border-[#B89A72]/5">
                             @foreach (['Konsultasi Ahli', 'Analisis Kasus Mendalam', 'Dukungan Berkelanjutan'] as $feat)
-                            <div class="flex items-center gap-2 text-sm" style="color:#5a5e7a;">
-                                <i class="fas fa-check-circle" style="color:#8a7048;"></i>
-                                <span>{{ $feat }}</span>
+                            <div class="flex items-center gap-3 text-sm" style="color:#5a5e7a;">
+                                <i class="fas fa-check-circle text-xs" style="color:#8a7048;"></i>
+                                <span class="font-medium">{{ $feat }}</span>
                             </div>
                             @endforeach
                         </div>
 
-                        <div class="pt-4 border-t border-[#B89A72]/10 flex items-center justify-between">
+                        <div class="mt-auto pt-5 border-t border-[#B89A72]/10 flex items-center justify-between">
                             <a href="{{ route('contact') }}"
-                                class="inline-flex items-center text-sm font-semibold transition-colors"
+                                class="inline-flex items-center text-sm font-bold transition-all group-hover:gap-3"
                                 style="color:#8a7048;">
                                 Konsultasi Sekarang
                                 <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
