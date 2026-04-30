@@ -242,7 +242,7 @@
                         <li class="flex items-start gap-3">
                             <i class="fas fa-map-marker-alt mt-1 shrink-0" style="color:#B89A72;"></i>
                             <div class="text-sm" style="color:#5a5e7a;">
-                                <span class="block font-semibold text-[#242844] mb-0.5">Kantor Jakarta</span>
+                                <span class="block font-semibold text-[#242844] mb-0.5">Head Office</span>
                                 {!! $footerContents['footer_address'] !!}
                             </div>
                         </li>
@@ -250,7 +250,7 @@
                         <li class="flex items-start gap-3 mt-4">
                             <i class="fas fa-map-marker-alt mt-1 shrink-0" style="color:#B89A72;"></i>
                             <div class="text-sm" style="color:#5a5e7a;">
-                                <span class="block font-semibold text-[#242844] mb-0.5">Kantor Samarinda</span>
+                                <span class="block font-semibold text-[#242844] mb-0.5">Branch Office</span>
                                 {!! $footerContents['footer_address_2'] !!}
                             </div>
                         </li>
