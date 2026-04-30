@@ -193,11 +193,34 @@
                 <h2 class="text-3xl font-bold text-[#242844] mb-4">{{ $contents['contact_map_title'] ?? 'Kunjungi Kantor Kami' }}</h2>
                 <p class="text-[#5a5e7a]">{{ $contents['contact_map_subtitle'] ?? 'Terletak strategis di pusat kota' }}</p>
             </div>
-            <div class="glass rounded-2xl overflow-hidden holographic reveal">
-                <div class="h-96 img-placeholder flex items-center justify-center">
-                    <div class="text-center">
-                        <i class="fas fa-map-marked-alt text-6xl text-[#B89A72]/30 mb-4"></i>
-                        <p class="text-[#5a5e7a]">Peta Interaktif</p>
+            <div class="grid md:grid-cols-2 gap-8">
+                {{-- Jakarta Map --}}
+                <div class="reveal">
+                    <h3 class="text-lg font-bold mb-4 flex items-center gap-2" style="color:#242844; font-family:'Playfair Display',serif;">
+                        <i class="fas fa-city text-[#B89A72]"></i> Head Office (Jakarta)
+                    </h3>
+                    <div class="glass rounded-2xl overflow-hidden holographic h-80 border border-[#B89A72]/10">
+                        <div class="h-full img-placeholder flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-map-location-dot text-5xl text-[#B89A72]/30 mb-3"></i>
+                                <p class="text-sm font-semibold" style="color:#5a5e7a;">Peta Jakarta</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Samarinda Map --}}
+                <div class="reveal" style="transition-delay: 150ms;">
+                    <h3 class="text-lg font-bold mb-4 flex items-center gap-2" style="color:#242844; font-family:'Playfair Display',serif;">
+                        <i class="fas fa-building-flag text-[#B89A72]"></i> Branch Office (Samarinda)
+                    </h3>
+                    <div class="glass rounded-2xl overflow-hidden holographic h-80 border border-[#B89A72]/10">
+                        <div class="h-full img-placeholder flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-map-location-dot text-5xl text-[#B89A72]/30 mb-3"></i>
+                                <p class="text-sm font-semibold" style="color:#5a5e7a;">Peta Samarinda</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
