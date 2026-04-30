@@ -15,19 +15,19 @@
 
 {{-- Stats row --}}
 <div class="adm-grid adm-grid-3" style="margin-bottom:1.25rem;">
-    <div class="adm-stat">
+    <div class="adm-stat" style="align-items:center; text-align:center;">
         <div class="adm-stat-icon" style="background:rgba(16,185,129,0.1); color:#059669;"><i class="fas fa-check-circle"></i></div>
         <div class="adm-stat-value">{{ \App\Models\Article::where('is_published',true)->count() }}</div>
         <div class="adm-stat-label">Dipublikasikan</div>
         <i class="fas fa-newspaper adm-stat-bg"></i>
     </div>
-    <div class="adm-stat">
+    <div class="adm-stat" style="align-items:center; text-align:center;">
         <div class="adm-stat-icon" style="background:rgba(245,158,11,0.1); color:#d97706;"><i class="fas fa-pen"></i></div>
         <div class="adm-stat-value">{{ \App\Models\Article::where('is_published',false)->count() }}</div>
         <div class="adm-stat-label">Draf</div>
         <i class="fas fa-file-pen adm-stat-bg"></i>
     </div>
-    <div class="adm-stat">
+    <div class="adm-stat" style="align-items:center; text-align:center;">
         <div class="adm-stat-icon" style="background:rgba(99,102,241,0.1); color:#6366f1;"><i class="fas fa-eye"></i></div>
         <div class="adm-stat-value">{{ number_format(\App\Models\Article::sum('views')) }}</div>
         <div class="adm-stat-label">Total Dilihat</div>

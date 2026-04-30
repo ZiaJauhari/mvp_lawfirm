@@ -298,6 +298,9 @@
             position: relative;
             overflow: hidden;
             transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .adm-stat:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(36,40,68,0.1); }
@@ -516,6 +519,7 @@
 
         /* ── GRID ── */
         .adm-grid { display: grid; gap: 1.25rem; }
+        .adm-grid > a { display: block; height: 100%; text-decoration: none; }
         .adm-grid-2 { grid-template-columns: repeat(2, 1fr); }
         .adm-grid-3 { grid-template-columns: repeat(3, 1fr); }
         .adm-grid-4 { grid-template-columns: repeat(4, 1fr); }
