@@ -79,15 +79,15 @@
                 <!-- Desktop Nav — centered -->
                 <div class="hidden md:flex flex-1 items-center justify-center gap-10">
                     <a href="{{ route('home') }}"
-                        class="nav-link {{ request()->routeIs('home') ? 'active' : '' }} text-[0.9rem] font-medium transition-all tracking-wide">beranda</a>
+                        class="nav-link {{ request()->routeIs('home') ? 'active' : '' }} text-[0.9rem] font-medium transition-all tracking-wide">Beranda</a>
                     <a href="{{ route('about') }}"
-                        class="nav-link {{ request()->routeIs('about') ? 'active' : '' }} text-[0.9rem] font-medium transition-all tracking-wide">tentang kami</a>
+                        class="nav-link {{ request()->routeIs('about') ? 'active' : '' }} text-[0.9rem] font-medium transition-all tracking-wide">Tentang Kami</a>
                     <a href="{{ route('services') }}"
-                        class="nav-link {{ request()->routeIs('services') ? 'active' : '' }} text-[0.9rem] font-medium transition-all tracking-wide">layanan</a>
+                        class="nav-link {{ request()->routeIs('services') ? 'active' : '' }} text-[0.9rem] font-medium transition-all tracking-wide">Layanan</a>
                     <a href="{{ route('team') }}"
-                        class="nav-link {{ request()->routeIs('team') ? 'active' : '' }} text-[0.9rem] font-medium transition-all tracking-wide">tim</a>
+                        class="nav-link {{ request()->routeIs('team') ? 'active' : '' }} text-[0.9rem] font-medium transition-all tracking-wide">Tim</a>
                     <a href="{{ route('articles') }}"
-                        class="nav-link {{ request()->routeIs('articles') ? 'active' : '' }} text-[0.9rem] font-medium transition-all tracking-wide">artikel</a>
+                        class="nav-link {{ request()->routeIs('articles') ? 'active' : '' }} text-[0.9rem] font-medium transition-all tracking-wide">Artikel</a>
                 </div>
 
                 <!-- Desktop CTA -->
@@ -95,7 +95,7 @@
                     class="nav-cta-btn hidden md:flex items-center"
                     style="background:#242844; color:#FDFBFC; padding: 0.75rem 1.75rem; border-radius: 99px; font-weight: 500; font-size: 0.9rem;">
                     <i class="fas fa-phone-alt text-sm mr-2"></i>
-                    kontak
+                    Kontak
                 </a>
 
                 <!-- Mobile Menu Toggle -->
