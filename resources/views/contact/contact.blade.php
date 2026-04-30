@@ -91,9 +91,9 @@
                                 class="w-10 h-10 rounded-xl bg-[#FDFBFC] flex items-center justify-center hover:bg-[#8a7048]/20 transition-colors border border-[#8a7048]/20">
                                 <i class="fab fa-linkedin-in text-[#8a7048]"></i>
                             </a>
-                            <a href="{{ $footerContents['footer_twitter'] }}"
+                            <a href="{{ $footerContents['footer_tiktok'] }}"
                                 class="w-10 h-10 rounded-xl bg-[#FDFBFC] flex items-center justify-center hover:bg-[#8a7048]/20 transition-colors border border-[#8a7048]/20">
-                                <i class="fab fa-twitter text-[#8a7048]"></i>
+                                <i class="fab fa-tiktok text-[#8a7048]"></i>
                             </a>
                             <a href="{{ $footerContents['footer_facebook'] }}"
                                 class="w-10 h-10 rounded-xl bg-[#FDFBFC] flex items-center justify-center hover:bg-[#8a7048]/20 transition-colors border border-[#8a7048]/20">

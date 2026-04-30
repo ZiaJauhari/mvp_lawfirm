@@ -47,7 +47,6 @@
                         
                         <div class="mb-6 grow">
                             @if($service->short_description && $service->short_description != $service->description)
-                                <p class="text-xs uppercase tracking-widest font-bold mb-2" style="color:#B89A72;">Overview</p>
                                 <p class="text-sm leading-relaxed mb-4" style="color:#5a5e7a;">{{ $service->short_description }}</p>
                             @endif
                             <p class="text-sm leading-relaxed" style="color:#363a5c;">{{ $service->description }}</p>
