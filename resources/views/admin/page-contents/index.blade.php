@@ -25,6 +25,76 @@
     @endforeach
 </div>
 
+@section('styles')
+<style>
+    .content-item-row {
+        padding: 1rem 1.25rem;
+        display: grid;
+        grid-template-columns: 200px 1fr auto;
+        gap: 1rem;
+        align-items: start;
+        border-bottom: 1px solid rgba(36,40,68,0.06);
+    }
+    .content-item-row:last-child {
+        border-bottom: none;
+    }
+    
+    .save-bar-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        position: sticky;
+        bottom: 1.25rem;
+        z-index: 10;
+        margin-top: 1.5rem;
+    }
+    
+    .save-bar {
+        background: rgba(253,251,252,0.95);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(184,154,114,0.2);
+        border-radius: 0.75rem;
+        padding: 0.75rem 1rem;
+        display: flex;
+        gap: 0.625rem;
+        align-items: center;
+        box-shadow: 0 8px 24px rgba(36,40,68,0.12);
+    }
+
+    @media (max-width: 768px) {
+        .content-item-row {
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+        .content-actions {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        .save-bar-wrapper {
+            bottom: 0;
+            padding: 1rem 0;
+            margin: 1rem -1.25rem -1rem;
+            background: rgba(253,251,252,0.95);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(184,154,114,0.1);
+            justify-content: center;
+        }
+        .save-bar {
+            width: 90%;
+            justify-content: center;
+            padding: 0.75rem;
+        }
+        .save-bar .helper-text {
+            display: none;
+        }
+        .save-bar .adm-btn {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+</style>
+@endsection
+
 {{-- Bulk-save form --}}
 @if($contents->count() > 0)
 <form action="{{ route('admin.page-contents.updateMultiple') }}" method="POST" id="bulk-form">
@@ -42,7 +112,7 @@
         </div>
         <div class="adm-card-body" style="padding:0;">
             @foreach($items as $idx => $item)
-            <div style="padding:1rem 1.25rem; {{ !$loop->last ? 'border-bottom:1px solid rgba(36,40,68,0.06);' : '' }} display:grid; grid-template-columns:200px 1fr auto; gap:1rem; align-items:start;">
+            <div class="content-item-row">
                 {{-- Label & key --}}
                 <div>
                     <div style="font-weight:600; font-size:0.82rem; color:var(--comet);">
@@ -70,7 +140,7 @@
                 </div>
 
                 {{-- Actions --}}
-                <div style="display:flex; gap:0.375rem; padding-top:0.25rem;">
+                <div class="content-actions" style="display:flex; gap:0.375rem; padding-top:0.25rem;">
                     <a href="{{ route('admin.page-contents.edit', $item) }}"
                        class="adm-btn adm-btn-ghost adm-btn-sm" title="Edit detail">
                         <i class="fas fa-pen"></i>
@@ -89,9 +159,9 @@
     @endforeach
 
     {{-- Save all button --}}
-    <div style="display:flex; justify-content:flex-end; gap:0.75rem; position:sticky; bottom:1.25rem; z-index:10;">
-        <div style="background:rgba(253,251,252,0.95); backdrop-filter:blur(8px); border:1px solid rgba(184,154,114,0.2); border-radius:0.75rem; padding:0.75rem 1rem; display:flex; gap:0.625rem; box-shadow:0 8px 24px rgba(36,40,68,0.12);">
-            <span style="font-size:0.78rem; color:var(--text-muted); align-self:center;">
+    <div class="save-bar-wrapper">
+        <div class="save-bar">
+            <span class="helper-text" style="font-size:0.78rem; color:var(--text-muted);">
                 <i class="fas fa-circle-info" style="color:var(--oak); margin-right:4px;"></i>
                 Edit nilai lalu klik Simpan Semua
             </span>

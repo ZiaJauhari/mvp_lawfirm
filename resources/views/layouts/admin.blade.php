@@ -697,7 +697,7 @@
     <div class="adm-overlay" id="adm-overlay" onclick="closeSidebar()"></div>
 
     {{-- Mobile toggle --}}
-    <button class="adm-mob-toggle" id="adm-mob-toggle" onclick="openSidebar()" aria-label="Open menu">
+    <button class="adm-mob-toggle" id="adm-mob-toggle" onclick="toggleSidebar()" aria-label="Toggle menu">
         <i class="fas fa-bars"></i>
     </button>
 
@@ -873,13 +873,26 @@
 
     <script>
     // Sidebar mobile
-    function openSidebar(){
-        document.getElementById('adm-sidebar').classList.add('open');
-        document.getElementById('adm-overlay').classList.add('open');
+    function toggleSidebar(){
+        var sidebar = document.getElementById('adm-sidebar');
+        var overlay = document.getElementById('adm-overlay');
         var toggleBtn = document.getElementById('adm-mob-toggle');
-        toggleBtn.classList.add('open');
-        toggleBtn.innerHTML = '<i class="fas fa-times"></i>';
+        
+        var isOpen = sidebar.classList.contains('open');
+        
+        if (isOpen) {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('open');
+            toggleBtn.classList.remove('open');
+            toggleBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        } else {
+            sidebar.classList.add('open');
+            overlay.classList.add('open');
+            toggleBtn.classList.add('open');
+            toggleBtn.innerHTML = '<i class="fas fa-times"></i>';
+        }
     }
+    
     function closeSidebar(){
         document.getElementById('adm-sidebar').classList.remove('open');
         document.getElementById('adm-overlay').classList.remove('open');
