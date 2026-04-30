@@ -29,6 +29,7 @@ class AppServiceProvider extends ServiceProvider
         }
 
         $defaults = [
+            'footer_title'         => 'Clarity in Every Legal Move',
             'footer_description'   => 'Layanan hukum profesional dengan integritas dan keunggulan. Solusi hukum komprehensif untuk individu dan bisnis.',
             'footer_address'       => 'Jl. Sudirman No. 123<br>Jakarta Pusat, 10220',
             'footer_address_2'     => 'Jl. P. Diponegoro No. 45<br>Samarinda, Kalimantan Timur',

@@ -11,7 +11,8 @@ class FooterContentSeeder extends Seeder
     {
         $contents = [
             // Footer - Brand
-            ['page' => 'footer', 'section' => 'brand', 'key' => 'footer_description', 'value' => 'Layanan hukum profesional dengan integritas dan keunggulan. Solusi hukum komprehensif untuk individu dan bisnis.', 'type' => 'textarea', 'label' => 'Deskripsi Footer', 'order' => 1],
+            ['page' => 'footer', 'section' => 'brand', 'key' => 'footer_title', 'value' => 'Clarity in Every Legal Move', 'type' => 'text', 'label' => 'Judul Footer', 'order' => 0],
+            ['page' => 'footer', 'section' => 'brand', 'key' => 'footer_description', 'value' => 'MVP Lawfirm membantu Anda mengambil keputusan hukum dengan kejelasan, strategi, dan arah yang terukur.', 'type' => 'textarea', 'label' => 'Deskripsi Footer', 'order' => 1],
 
             // Footer - Contact Info
             ['page' => 'footer', 'section' => 'kontak', 'key' => 'footer_address', 'value' => 'Jl. Sudirman No. 123<br>Jakarta Pusat, 10220', 'type' => 'textarea', 'label' => 'Alamat Kantor 1 (Jakarta)', 'order' => 10],

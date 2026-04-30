@@ -177,6 +177,11 @@
                     <a href="{{ route('home') }}" class="flex items-center mb-5 group">
                         <img src="{{ asset('primary-horizontal.png') }}" alt="MVP Law Logo" style="height: 40px; width: auto; object-fit: contain;">
                     </a>
+                    @if(!empty($footerContents['footer_title']))
+                    <h4 class="text-lg font-bold mb-3" style="color:#242844; font-family:'Playfair Display',serif;">
+                        {{ $footerContents['footer_title'] }}
+                    </h4>
+                    @endif
                     <p class="text-sm leading-relaxed mb-5" style="color:#5a5e7a;">
                         {{ $footerContents['footer_description'] }}
                     </p>
