@@ -42,7 +42,7 @@
                                 <i class="fas fa-map-marker-alt text-[#8a7048]"></i>
                             </div>
                             <div>
-                                <h4 class="text-[#242844] font-semibold mb-1">Kantor Jakarta</h4>
+                                <h4 class="text-[#242844] font-semibold mb-1">Head Office</h4>
                                 <p class="text-[#5a5e7a] text-sm">{!! $footerContents['footer_address'] !!}</p>
                             </div>
                         </div>
@@ -54,7 +54,7 @@
                                 <i class="fas fa-map-marker-alt text-[#8a7048]"></i>
                             </div>
                             <div>
-                                <h4 class="text-[#242844] font-semibold mb-1">Kantor Samarinda</h4>
+                                <h4 class="text-[#242844] font-semibold mb-1">Branch Office</h4>
                                 <p class="text-[#5a5e7a] text-sm">{!! $footerContents['footer_address_2'] !!}</p>
                             </div>
                         </div>
