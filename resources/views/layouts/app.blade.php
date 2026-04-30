@@ -116,27 +116,27 @@
             <div class="px-4 py-4 space-y-1">
                 <a href="{{ route('home') }}"
                     class="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-colors {{ request()->routeIs('home') ? 'bg-[#B89A72]/10 text-[#8a7048]' : 'text-[#363a5c] hover:bg-[#B89A72]/8 hover:text-[#242844]' }}">
-                    <i class="fas fa-home w-4"></i> beranda
+                    <i class="fas fa-home w-4"></i> Beranda
                 </a>
                 <a href="{{ route('about') }}"
                     class="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-colors {{ request()->routeIs('about') ? 'bg-[#B89A72]/10 text-[#8a7048]' : 'text-[#363a5c] hover:bg-[#B89A72]/8 hover:text-[#242844]' }}">
-                    <i class="fas fa-info-circle w-4"></i> tentang kami
+                    <i class="fas fa-info-circle w-4"></i> Tentang Kami
                 </a>
                 <a href="{{ route('services') }}"
                     class="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-colors {{ request()->routeIs('services') ? 'bg-[#B89A72]/10 text-[#8a7048]' : 'text-[#363a5c] hover:bg-[#B89A72]/8 hover:text-[#242844]' }}">
-                    <i class="fas fa-briefcase w-4"></i> layanan
+                    <i class="fas fa-briefcase w-4"></i> Layanan
                 </a>
                 <a href="{{ route('team') }}"
                     class="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-colors {{ request()->routeIs('team') ? 'bg-[#B89A72]/10 text-[#8a7048]' : 'text-[#363a5c] hover:bg-[#B89A72]/8 hover:text-[#242844]' }}">
-                    <i class="fas fa-users w-4"></i> tim
+                    <i class="fas fa-users w-4"></i> Tim
                 </a>
                 <a href="{{ route('articles') }}"
                     class="flex items-center gap-2 px-4 py-3 rounded-xl text-sm font-medium transition-colors {{ request()->routeIs('articles') ? 'bg-[#B89A72]/10 text-[#8a7048]' : 'text-[#363a5c] hover:bg-[#B89A72]/8 hover:text-[#242844]' }}">
-                    <i class="fas fa-newspaper w-4"></i> artikel
+                    <i class="fas fa-newspaper w-4"></i> Artikel
                 </a>
                 <div class="pt-2 pb-1">
                     <a href="{{ route('contact') }}" class="flex items-center justify-center gap-2 w-full px-5 py-3 rounded-xl text-sm font-semibold" style="background:#242844; color:#FDFBFC;">
-                        <i class="fas fa-phone-alt text-xs"></i>kontak
+                        <i class="fas fa-phone-alt text-xs"></i> Kontak
                     </a>
                 </div>
             </div>
