@@ -174,7 +174,7 @@
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="reveal-left">
-                    <span class="text-uppercase-accent mb-3 block">Mengapa Memilih Kami</span>
+                    <span class="text-uppercase-accent mb-3 block">Kenapa Memilih MVP Lawfirm</span>
                     <h2 class="text-4xl md:text-5xl font-bold mb-6"
                         style="font-family:'Playfair Display',serif; color:#242844;">
                         {!! $contents['why_title'] ?? 'Pengalaman &amp;<br><span style="color:#B89A72;">Keunggulan</span>' !!}
@@ -185,10 +185,10 @@
 
                     <div class="space-y-5 stagger-children">
                         @foreach ([
-                            ['check-circle', $contents['home_feat_1_title'] ?? 'Rekam Jejak Terbukti', $contents['home_feat_1_desc'] ?? 'Tingkat keberhasilan 98% di semua bidang praktik hukum kami'],
-                            ['user-shield', $contents['home_feat_2_title'] ?? 'Perhatian Personal', $contents['home_feat_2_desc'] ?? 'Setiap kasus mendapatkan fokus dan strategi yang berdedikasi penuh'],
-                            ['clock', $contents['home_feat_3_title'] ?? 'Ketersediaan 24/7', $contents['home_feat_3_desc'] ?? 'Dukungan hukum darurat 24 jam untuk masalah mendesak Anda'],
-                            ['handshake', $contents['home_feat_4_title'] ?? 'Biaya Transparan', $contents['home_feat_4_desc'] ?? 'Tidak ada biaya tersembunyi — konsultasi awal selalu gratis'],
+                            ['scale-balanced', $contents['home_feat_1_title'] ?? 'Rekam Jejak Terbukti', $contents['home_feat_1_desc'] ?? 'Tingkat keberhasilan 98% di semua bidang praktik hukum kami'],
+                            ['chess-king', $contents['home_feat_2_title'] ?? 'Perhatian Personal', $contents['home_feat_2_desc'] ?? 'Setiap kasus mendapatkan fokus dan strategi yang berdedikasi penuh'],
+                            ['file-lines', $contents['home_feat_3_title'] ?? 'Ketersediaan 24/7', $contents['home_feat_3_desc'] ?? 'Dukungan hukum darurat 24 jam untuk masalah mendesak Anda'],
+                            ['briefcase', $contents['home_feat_4_title'] ?? 'Biaya Transparan', $contents['home_feat_4_desc'] ?? 'Tidak ada biaya tersembunyi — konsultasi awal selalu gratis'],
                         ] as $feat)
                         <div class="flex items-start gap-4 reveal">
                             <div class="shrink-0 w-11 h-11 rounded-xl flex items-center justify-center border"
