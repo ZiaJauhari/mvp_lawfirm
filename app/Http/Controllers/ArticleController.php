@@ -47,9 +47,9 @@ class ArticleController extends Controller
 
     }
 
-    public function show($slug)
+    public function show(string $slug)
     {
-        $article = Article::where('slug', $slug)->where('is_published', true)->firstOrFail();
+        $article = Article::query()->where('slug', $slug)->where('is_published', true)->firstOrFail();
         $article->incrementViews();
         
         $relatedArticles = Article::published()

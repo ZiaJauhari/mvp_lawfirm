@@ -56,10 +56,10 @@ class HomeController extends Controller
 
         // Calculate stats for dashboard
         $stats = [
-            'total_services' => Service::count(),
-            'total_team' => Team::count(),
-            'total_articles' => Article::count(),
-            'pending_orders' => Contact::unread()->count(),
+            'total_services' => Service::query()->count('*'),
+            'total_team' => Team::query()->count('*'),
+            'total_articles' => Article::query()->count('*'),
+            'pending_orders' => Contact::unread()->count('*'),
         ];
 
         return view('home.home', compact('services', 'teams', 'articles', 'testimonials', 'stats', 'contents'));

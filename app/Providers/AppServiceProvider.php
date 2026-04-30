@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // Share footer content globally
-        $footerItems = PageContent::where('page', 'footer')->orderBy('order')->get();
+        $footerItems = PageContent::getByPage('footer');
         $footer = [];
         foreach ($footerItems as $item) {
             $footer[$item->key] = $item->value;
@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
         // Auto-create footer_title if it doesn't exist in DB to make it appear in Admin
         if (!isset($footer['footer_title'])) {
             try {
-                \App\Models\PageContent::create([
+                PageContent::create([
                     'page' => 'footer',
                     'section' => 'brand',
                     'key' => 'footer_title',
@@ -41,13 +41,49 @@ class AppServiceProvider extends ServiceProvider
                     'order' => 0
                 ]);
                 // Refresh list
-                $footerItems = PageContent::where('page', 'footer')->orderBy('order')->get();
+                $footerItems = PageContent::getByPage('footer');
                 foreach ($footerItems as $item) {
                     $footer[$item->key] = $item->value;
                 }
             } catch (\Exception $e) {
                 // Silently fail if DB not ready
             }
+        }
+
+        // Auto-migrate Twitter to TikTok if it exists
+        if (isset($footer['footer_twitter']) && !isset($footer['footer_tiktok'])) {
+            try {
+                PageContent::query()->where('key', 'footer_twitter')->update([
+                    'key' => 'footer_tiktok',
+                    'label' => 'URL TikTok',
+                ]);
+                // Refresh list
+                $footerItems = PageContent::getByPage('footer');
+                $footer = [];
+                foreach ($footerItems as $item) {
+                    $footer[$item->key] = $item->value;
+                }
+            } catch (\Exception $e) {}
+        }
+
+        // Ensure TikTok exists if still missing
+        if (!isset($footer['footer_tiktok'])) {
+            try {
+                PageContent::create([
+                    'page' => 'footer',
+                    'section' => 'sosial_media',
+                    'key' => 'footer_tiktok',
+                    'value' => '#',
+                    'type' => 'text',
+                    'label' => 'URL TikTok',
+                    'order' => 22
+                ]);
+                // Final refresh
+                $footerItems = PageContent::getByPage('footer');
+                foreach ($footerItems as $item) {
+                    $footer[$item->key] = $item->value;
+                }
+            } catch (\Exception $e) {}
         }
 
         $defaults = [
@@ -61,10 +97,10 @@ class AppServiceProvider extends ServiceProvider
             'footer_whatsapp_link' => 'https://wa.me/6281234567890',
             'footer_office_hours'  => 'Senin–Jumat: 08.00–17.00 WIB',
             'footer_copyright'     => 'MVP Law Firm. Hak cipta dilindungi undang-undang.',
-            'footer_linkedin'      => '#',
-            'footer_twitter'       => '#',
-            'footer_facebook'      => '#',
             'footer_instagram'     => '#',
+            'footer_facebook'      => '#',
+            'footer_tiktok'        => '#',
+            'footer_linkedin'      => '#',
         ];
 
         $footer = array_merge($defaults, $footer);

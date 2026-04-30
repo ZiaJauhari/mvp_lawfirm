@@ -24,10 +24,10 @@ class FooterContentSeeder extends Seeder
             ['page' => 'footer', 'section' => 'kontak', 'key' => 'footer_office_hours', 'value' => 'Senin–Jumat: 08.00–17.00 WIB', 'type' => 'text', 'label' => 'Jam Operasional', 'order' => 15],
 
             // Footer - Social Media
-            ['page' => 'footer', 'section' => 'sosial_media', 'key' => 'footer_linkedin', 'value' => '#', 'type' => 'text', 'label' => 'URL LinkedIn', 'order' => 20],
-            ['page' => 'footer', 'section' => 'sosial_media', 'key' => 'footer_twitter', 'value' => '#', 'type' => 'text', 'label' => 'URL Twitter / X', 'order' => 21],
-            ['page' => 'footer', 'section' => 'sosial_media', 'key' => 'footer_facebook', 'value' => '#', 'type' => 'text', 'label' => 'URL Facebook', 'order' => 22],
-            ['page' => 'footer', 'section' => 'sosial_media', 'key' => 'footer_instagram', 'value' => '#', 'type' => 'text', 'label' => 'URL Instagram', 'order' => 23],
+            ['page' => 'footer', 'section' => 'sosial_media', 'key' => 'footer_instagram', 'value' => '#', 'type' => 'text', 'label' => 'URL Instagram', 'order' => 20],
+            ['page' => 'footer', 'section' => 'sosial_media', 'key' => 'footer_facebook', 'value' => '#', 'type' => 'text', 'label' => 'URL Facebook', 'order' => 21],
+            ['page' => 'footer', 'section' => 'sosial_media', 'key' => 'footer_tiktok', 'value' => '#', 'type' => 'text', 'label' => 'URL TikTok', 'order' => 22],
+            ['page' => 'footer', 'section' => 'sosial_media', 'key' => 'footer_linkedin', 'value' => '#', 'type' => 'text', 'label' => 'URL LinkedIn', 'order' => 23],
 
             // Footer - Copyright
             ['page' => 'footer', 'section' => 'lainnya', 'key' => 'footer_copyright', 'value' => 'MVP Law Firm. Hak cipta dilindungi undang-undang.', 'type' => 'text', 'label' => 'Teks Hak Cipta', 'order' => 30],

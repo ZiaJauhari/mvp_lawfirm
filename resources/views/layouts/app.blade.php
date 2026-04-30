@@ -186,25 +186,25 @@
                         {{ $footerContents['footer_description'] }}
                     </p>
                     <div class="flex gap-3">
-                        <a href="{{ $footerContents['footer_linkedin'] }}" aria-label="LinkedIn"
+                        <a href="{{ $footerContents['footer_instagram'] }}" aria-label="Instagram"
                             class="social-link w-9 h-9 rounded-lg flex items-center justify-center border"
                             style="background:#F5F3F4; border-color:rgba(184,154,114,0.15);">
-                            <i class="fab fa-linkedin-in text-[#B89A72] text-sm"></i>
-                        </a>
-                        <a href="{{ $footerContents['footer_twitter'] }}" aria-label="Twitter / X"
-                            class="social-link w-9 h-9 rounded-lg flex items-center justify-center border"
-                            style="background:#F5F3F4; border-color:rgba(184,154,114,0.15);">
-                            <i class="fab fa-twitter text-[#B89A72] text-sm"></i>
+                            <i class="fab fa-instagram text-base" style="color:#8a7048;"></i>
                         </a>
                         <a href="{{ $footerContents['footer_facebook'] }}" aria-label="Facebook"
                             class="social-link w-9 h-9 rounded-lg flex items-center justify-center border"
                             style="background:#F5F3F4; border-color:rgba(184,154,114,0.15);">
-                            <i class="fab fa-facebook-f text-[#B89A72] text-sm"></i>
+                            <i class="fab fa-facebook-f text-base" style="color:#8a7048;"></i>
                         </a>
-                        <a href="{{ $footerContents['footer_instagram'] }}" aria-label="Instagram"
+                        <a href="{{ $footerContents['footer_tiktok'] }}" aria-label="TikTok"
                             class="social-link w-9 h-9 rounded-lg flex items-center justify-center border"
                             style="background:#F5F3F4; border-color:rgba(184,154,114,0.15);">
-                            <i class="fab fa-instagram text-[#B89A72] text-sm"></i>
+                            <i class="fab fa-tiktok text-base" style="color:#8a7048;"></i>
+                        </a>
+                        <a href="{{ $footerContents['footer_linkedin'] }}" aria-label="LinkedIn"
+                            class="social-link w-9 h-9 rounded-lg flex items-center justify-center border"
+                            style="background:#F5F3F4; border-color:rgba(184,154,114,0.15);">
+                            <i class="fab fa-linkedin-in text-base" style="color:#8a7048;"></i>
                         </a>
                     </div>
                 </div>
