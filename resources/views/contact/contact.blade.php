@@ -87,21 +87,21 @@
                     <div>
                         <h4 class="text-[#242844] font-semibold mb-4">Ikuti Kami</h4>
                         <div class="flex space-x-3">
-                            <a href="{{ $footerContents['footer_linkedin'] }}"
+                            <a href="{{ $footerContents['footer_instagram'] }}"
                                 class="w-10 h-10 rounded-xl bg-[#FDFBFC] flex items-center justify-center hover:bg-[#8a7048]/20 transition-colors border border-[#8a7048]/20">
-                                <i class="fab fa-linkedin-in text-[#8a7048]"></i>
-                            </a>
-                            <a href="{{ $footerContents['footer_tiktok'] }}"
-                                class="w-10 h-10 rounded-xl bg-[#FDFBFC] flex items-center justify-center hover:bg-[#8a7048]/20 transition-colors border border-[#8a7048]/20">
-                                <i class="fab fa-tiktok text-[#8a7048]"></i>
+                                <i class="fab fa-instagram text-[#8a7048]"></i>
                             </a>
                             <a href="{{ $footerContents['footer_facebook'] }}"
                                 class="w-10 h-10 rounded-xl bg-[#FDFBFC] flex items-center justify-center hover:bg-[#8a7048]/20 transition-colors border border-[#8a7048]/20">
                                 <i class="fab fa-facebook-f text-[#8a7048]"></i>
                             </a>
-                            <a href="{{ $footerContents['footer_instagram'] }}"
+                            <a href="{{ $footerContents['footer_tiktok'] }}"
                                 class="w-10 h-10 rounded-xl bg-[#FDFBFC] flex items-center justify-center hover:bg-[#8a7048]/20 transition-colors border border-[#8a7048]/20">
-                                <i class="fab fa-instagram text-[#8a7048]"></i>
+                                <i class="fab fa-tiktok text-[#8a7048]"></i>
+                            </a>
+                            <a href="{{ $footerContents['footer_linkedin'] }}"
+                                class="w-10 h-10 rounded-xl bg-[#FDFBFC] flex items-center justify-center hover:bg-[#8a7048]/20 transition-colors border border-[#8a7048]/20">
+                                <i class="fab fa-linkedin-in text-[#8a7048]"></i>
                             </a>
                         </div>
                     </div>
