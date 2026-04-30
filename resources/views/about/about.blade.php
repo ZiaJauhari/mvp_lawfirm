@@ -12,7 +12,7 @@
         </div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="reveal max-w-3xl mx-auto">
-                <span class="text-uppercase-accent mb-3 block">Tentang Kami</span>
+                <span class="text-uppercase-accent mb-3 block">TENTANG MVP LAWFIRM</span>
                 <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold mb-6"
                     style="font-family:'Playfair Display',serif; color:#242844; letter-spacing:-0.02em;">
                     {!! $contents['about_hero_title'] !!}
