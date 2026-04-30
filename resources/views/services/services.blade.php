@@ -126,14 +126,14 @@
                 </p>
             </div>
 
-            <div class="grid gap-8 md:grid-cols-3 stagger-children">
+            <div class="grid gap-8 md:grid-cols-3 stagger-children pt-10">
                 {{-- Basic --}}
-                <div class="glass rounded-2xl p-8 card-lift holographic reveal flex flex-col h-full">
+                <div class="glass rounded-2xl p-8 card-lift holographic reveal flex flex-col h-full overflow-visible">
                     <div class="mb-6">
                         <h3 class="text-xl font-bold mb-1" style="color:#242844; font-family:'Playfair Display',serif;">{{ $contents['services_pricing_1_title'] ?? 'Dasar' }}</h3>
                         <p class="text-sm" style="color:#5a5e7a;">{{ $contents['services_pricing_1_desc'] ?? 'Untuk masalah hukum sederhana' }}</p>
                     </div>
-                    <div class="mb-8 text-center py-6 rounded-2xl transition-all hover:bg-[#B89A72]/10" 
+                    <div class="mb-8 text-center py-6 px-4 rounded-2xl transition-all hover:bg-[#B89A72]/10" 
                         style="background:rgba(184,154,114,0.06); border:1.5px solid rgba(184,154,114,0.12);">
                         <div class="text-2xl font-bold mb-1" style="color:#8a7048; font-family:'Playfair Display',serif; letter-spacing: -0.01em;">
                             {{ $contents['services_pricing_1_price'] ?? 'Hubungi Kami' }}
@@ -159,7 +159,7 @@
                 </div>
 
                 {{-- Professional (featured) --}}
-                <div class="glass rounded-2xl p-8 card-lift holographic reveal relative border-2 flex flex-col h-full" style="border-color:rgba(184,154,114,0.4);">
+                <div class="glass rounded-2xl p-8 card-lift holographic reveal relative border-2 flex flex-col h-full overflow-visible" style="border-color:rgba(184,154,114,0.4);">
                     <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
                         <span class="badge badge-accent shadow-lg px-6 py-2 border-none" style="background: linear-gradient(135deg, #B89A72, #d4b896); color: #242844;">Paling Populer</span>
                     </div>
@@ -169,7 +169,7 @@
                         <h3 class="text-xl font-bold mb-1" style="color:#242844; font-family:'Playfair Display',serif;">{{ $contents['services_pricing_2_title'] ?? 'Profesional' }}</h3>
                         <p class="text-sm" style="color:#5a5e7a;">{{ $contents['services_pricing_2_desc'] ?? 'Untuk kebutuhan hukum menengah-kompleks' }}</p>
                     </div>
-                    <div class="relative mb-8 text-center py-6 rounded-2xl shadow-inner-sm transition-all hover:bg-[#B89A72]/15" 
+                    <div class="relative mb-8 text-center py-6 px-4 rounded-2xl shadow-inner-sm transition-all hover:bg-[#B89A72]/15" 
                         style="background:rgba(184,154,114,0.1); border:1.5px solid rgba(184,154,114,0.25);">
                         <div class="text-2xl font-bold mb-1" style="color:#8a7048; font-family:'Playfair Display',serif; letter-spacing: -0.01em;">
                             {{ $contents['services_pricing_2_price'] ?? 'Hubungi Kami' }}
@@ -195,12 +195,12 @@
                 </div>
 
                 {{-- Enterprise --}}
-                <div class="glass rounded-2xl p-8 card-lift holographic reveal flex flex-col h-full">
+                <div class="glass rounded-2xl p-8 card-lift holographic reveal flex flex-col h-full overflow-visible">
                     <div class="mb-6">
                         <h3 class="text-xl font-bold mb-1" style="color:#242844; font-family:'Playfair Display',serif;">{{ $contents['services_pricing_3_title'] ?? 'Enterprise' }}</h3>
                         <p class="text-sm" style="color:#5a5e7a;">{{ $contents['services_pricing_3_desc'] ?? 'Untuk bisnis & korporasi besar' }}</p>
                     </div>
-                    <div class="mb-8 text-center py-6 rounded-2xl transition-all hover:bg-[#242844]/5" 
+                    <div class="mb-8 text-center py-6 px-4 rounded-2xl transition-all hover:bg-[#242844]/5" 
                         style="background:rgba(36,40,68,0.05); border:1.5px solid rgba(36,40,68,0.1);">
                         <div class="text-2xl font-bold mb-1" style="color:#242844; font-family:'Playfair Display',serif; letter-spacing: -0.01em;">
                             {{ $contents['services_pricing_3_price'] ?? 'Kustom' }}
