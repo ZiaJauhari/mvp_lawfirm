@@ -15,7 +15,7 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="id_ID">
 
-    <title>{{ config('app.name', 'MVP Law Firm') }} | Layanan Hukum Profesional</title>
+    <title>@yield('title', config('app.name', 'MVP Law Firm') . ' | Layanan Hukum Profesional')</title>
 
     {{-- Preconnect --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">

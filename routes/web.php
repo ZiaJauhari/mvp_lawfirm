@@ -21,6 +21,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/services', [ServiceController::class, 'index'])->name('services');
 Route::get('/team', [TeamController::class, 'index'])->name('team');
+Route::get('/team/{team}', [TeamController::class, 'show'])->name('team.show');
 Route::get('/articles', [ArticleController::class, 'index'])->name('articles');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');

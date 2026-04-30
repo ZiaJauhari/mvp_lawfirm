@@ -28,4 +28,15 @@ class TeamController extends Controller
 
         return view('team.team', compact('teams', 'contents'));
     }
+
+    public function show(Team $team)
+    {
+        // Get other team members for the "Tim Lainnya" section
+        $otherMembers = Team::active()
+            ->where('id', '!=', $team->id)
+            ->take(4)
+            ->get();
+
+        return view('team.show', compact('team', 'otherMembers'));
+    }
 }

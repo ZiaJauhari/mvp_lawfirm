@@ -79,23 +79,22 @@
 
                         <div class="flex items-center justify-between pt-3 border-t" style="border-color:rgba(184,154,114,0.1);">
                             <div class="flex gap-2">
-                                <a href="#" aria-label="LinkedIn"
-                                    class="w-8 h-8 rounded-lg flex items-center justify-center border transition-colors hover:bg-[#8a7048]/20"
-                                    style="background:#F5F3F4; border-color:rgba(138,112,72,0.2);">
-                                    <i class="fab fa-linkedin-in text-[#8a7048] text-xs"></i>
-                                </a>
-                                <a href="#" aria-label="Email"
+                                @if(!empty($team->email))
+                                <a href="mailto:{{ $team->email }}" aria-label="Email"
                                     class="w-8 h-8 rounded-lg flex items-center justify-center border transition-colors hover:bg-[#8a7048]/20"
                                     style="background:#F5F3F4; border-color:rgba(138,112,72,0.2);">
                                     <i class="fas fa-envelope text-[#8a7048] text-xs"></i>
                                 </a>
-                                <a href="#" aria-label="Telepon"
+                                @endif
+                                @if(!empty($team->phone))
+                                <a href="tel:{{ $team->phone }}" aria-label="Telepon"
                                     class="w-8 h-8 rounded-lg flex items-center justify-center border transition-colors hover:bg-[#8a7048]/20"
                                     style="background:#F5F3F4; border-color:rgba(138,112,72,0.2);">
                                     <i class="fas fa-phone text-[#8a7048] text-xs"></i>
                                 </a>
+                                @endif
                             </div>
-                            <a href="#" class="text-xs font-semibold transition-colors hover:text-[#6b5639]" style="color:#8a7048;">
+                            <a href="{{ route('team.show', $team) }}" class="text-xs font-semibold transition-colors hover:text-[#6b5639]" style="color:#8a7048;">
                                 Profil <i class="fas fa-arrow-right ml-1 text-[10px]"></i>
                             </a>
                         </div>
