@@ -13,7 +13,7 @@
     </a>
 </div>
 
-<div style="display:grid; grid-template-columns:1fr 280px; gap:1.25rem; align-items:start;">
+<div class="adm-form-grid">
 
     {{-- Message body --}}
     <div class="adm-card">

@@ -15,7 +15,7 @@
 
 <form action="{{ route('admin.teams.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
-    <div style="display:grid; grid-template-columns:1fr 320px; gap:1.25rem; align-items:start;">
+    <div class="adm-form-grid">
 
         {{-- Main --}}
         <div class="adm-card">

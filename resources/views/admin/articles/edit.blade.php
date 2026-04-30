@@ -22,7 +22,7 @@
 
 <form action="{{ route('admin.articles.update', $article) }}" method="POST" enctype="multipart/form-data">
     @csrf @method('PUT')
-    <div style="display:grid; grid-template-columns:1fr 320px; gap:1.25rem; align-items:start;">
+    <div class="adm-form-grid">
 
         {{-- Main --}}
         <div style="display:flex; flex-direction:column; gap:1.25rem;">

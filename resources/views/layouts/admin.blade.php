@@ -523,9 +523,10 @@
         .adm-grid-2 { grid-template-columns: repeat(2, 1fr); }
         .adm-grid-3 { grid-template-columns: repeat(3, 1fr); }
         .adm-grid-4 { grid-template-columns: repeat(4, 1fr); }
+        .adm-form-grid { display: grid; grid-template-columns: 1fr 320px; gap: 1.25rem; align-items: start; }
 
         @media (max-width: 768px) {
-            .adm-grid-2, .adm-grid-3 { grid-template-columns: 1fr; }
+            .adm-grid-2, .adm-grid-3, .adm-form-grid { grid-template-columns: 1fr; }
             .adm-grid-4 { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
         }
 
