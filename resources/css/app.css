@@ -897,7 +897,7 @@ textarea.input-modern {
 /* ============================================
    HOLOGRAPHIC SHIMMER
    ============================================ */
-.holographic { position: relative; overflow: hidden; }
+.holographic { position: relative; }
 
 .holographic::before {
     content: '';
