@@ -607,6 +607,15 @@
             .adm-header { padding-left: 4rem; }
         }
 
+        @media (max-width: 600px) {
+            .hidable-on-mob { display: none !important; }
+            .adm-user-name { display: none !important; }
+            .adm-user-pill { padding: 0.25rem !important; border-radius: 50% !important; }
+            .adm-header-right { gap: 0.75rem !important; }
+            .adm-breadcrumb { font-size: 0.75rem; gap: 0.35rem; }
+            .adm-header { padding-right: 1.25rem; }
+        }
+
         /* ── PAGINATION ── */
         .adm-pagination { display: flex; gap: 0.375rem; align-items: center; flex-wrap: wrap; }
         .adm-pagination a, .adm-pagination span {
@@ -681,7 +690,7 @@
     <aside class="adm-sidebar" id="adm-sidebar">
         {{-- Brand --}}
         <a href="{{ route('admin.dashboard') }}" class="adm-sidebar-brand">
-            <img src="{{ asset('primary-horizontal.png') }}" alt="MVP Law Logo" style="height: 40px; width: auto; object-fit: contain;">
+            <img src="{{ asset('logomvp.png') }}" alt="MVP Law Logo" style="height: 40px; width: auto; object-fit: contain;">
         </a>
 
 
@@ -758,18 +767,18 @@
         <header class="adm-header">
             <div class="adm-breadcrumb">
                 <i class="fas fa-scale-balanced" style="color:var(--oak); font-size:0.85rem;"></i>
-                <span class="sep">/</span>
-                <span>Admin</span>
+                <span class="sep hidable-on-mob">/</span>
+                <span class="hidable-on-mob">Admin</span>
                 @hasSection('breadcrumb')
                     <span class="sep">/</span>
-                    <span class="current">@yield('breadcrumb')</span>
+                    <span class="current" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 120px;">@yield('breadcrumb')</span>
                 @endif
             </div>
             <div class="adm-header-right">
                 <a href="{{ url('/') }}" target="_blank" rel="noopener"
                    style="font-size:0.78rem; color:var(--text-muted); text-decoration:none; display:flex; align-items:center; gap:0.35rem;">
-                    <i class="fas fa-arrow-up-right-from-square" style="font-size:0.7rem;"></i>
-                    Lihat Situs
+                    <i class="fas fa-arrow-up-right-from-square" style="font-size:0.75rem;"></i>
+                    <span class="hidable-on-mob">Lihat Situs</span>
                 </a>
                 <div class="adm-user-pill">
                     <div class="adm-user-avatar">
