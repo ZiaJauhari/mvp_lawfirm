@@ -96,10 +96,10 @@
 
             <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 stagger-children">
                 @foreach ([
-                    ['shield-alt', $contents['about_value_1_title'] ?? 'Integritas', $contents['about_value_1_desc'] ?? 'Komitmen tak tergoyahkan terhadap praktik etis dan nasihat yang jujur kepada setiap klien'],
-                    ['trophy', $contents['about_value_2_title'] ?? 'Keunggulan', $contents['about_value_2_desc'] ?? 'Pengejaran tanpa henti terhadap standar tertinggi dalam setiap kasus yang kami tangani'],
-                    ['users', $contents['about_value_3_title'] ?? 'Fokus Klien', $contents['about_value_3_desc'] ?? 'Menempatkan kebutuhan dan kepentingan klien selalu di atas segalanya dalam setiap keputusan'],
-                    ['lightbulb', $contents['about_value_4_title'] ?? 'Inovasi', $contents['about_value_4_desc'] ?? 'Menerapkan pendekatan modern dan kreatif sambil menghormati tradisi dan nilai hukum'],
+                    ['eye', $contents['about_value_1_title'] ?? 'Integritas', $contents['about_value_1_desc'] ?? 'Komitmen tak tergoyahkan terhadap praktik etis dan nasihat yang jujur kepada setiap klien'],
+                    ['chess-king', $contents['about_value_2_title'] ?? 'Keunggulan', $contents['about_value_2_desc'] ?? 'Pengejaran tanpa henti terhadap standar tertinggi dalam setiap kasus yang kami tangani'],
+                    ['shield-halved', $contents['about_value_3_title'] ?? 'Fokus Klien', $contents['about_value_3_desc'] ?? 'Menempatkan kebutuhan dan kepentingan klien selalu di atas segalanya dalam setiap keputusan'],
+                    ['crosshairs', $contents['about_value_4_title'] ?? 'Inovasi', $contents['about_value_4_desc'] ?? 'Menerapkan pendekatan modern dan kreatif sambil menghormati tradisi dan nilai hukum'],
                 ] as [$icon, $title, $desc])
                 <div class="glass rounded-2xl p-8 card-lift holographic reveal text-center relative overflow-hidden group">
                     {{-- Background icon --}}
