@@ -128,36 +128,40 @@
 
             <div class="grid gap-8 md:grid-cols-3 stagger-children">
                 {{-- Basic --}}
-                <div class="glass rounded-2xl p-8 card-lift holographic reveal">
+                <div class="glass rounded-2xl p-8 card-lift holographic reveal flex flex-col h-full">
                     <div class="mb-6">
                         <h3 class="text-xl font-bold mb-1" style="color:#242844; font-family:'Playfair Display',serif;">{{ $contents['services_pricing_1_title'] ?? 'Dasar' }}</h3>
                         <p class="text-sm" style="color:#5a5e7a;">{{ $contents['services_pricing_1_desc'] ?? 'Untuk masalah hukum sederhana' }}</p>
                     </div>
-                    <div class="mb-6 text-center py-5 rounded-xl" style="background:rgba(184,154,114,0.06); border:1px solid rgba(184,154,114,0.12);">
-                        <div class="text-2xl font-bold mb-1" style="color:#8a7048; font-family:'Playfair Display',serif;">
+                    <div class="mb-8 text-center py-6 rounded-2xl transition-all hover:bg-[#B89A72]/10" 
+                        style="background:rgba(184,154,114,0.06); border:1.5px solid rgba(184,154,114,0.12);">
+                        <div class="text-2xl font-bold mb-1" style="color:#8a7048; font-family:'Playfair Display',serif; letter-spacing: -0.01em;">
                             {{ $contents['services_pricing_1_price'] ?? 'Hubungi Kami' }}
                         </div>
-                        <div class="text-xs" style="color:#5a5e7a;">{{ $contents['services_pricing_1_subprice'] ?? 'Harga sesuai kebutuhan' }}</div>
+                        <div class="text-xs font-medium uppercase tracking-wider" style="color:#5a5e7a; opacity: 0.8;">{{ $contents['services_pricing_1_subprice'] ?? 'Harga sesuai kebutuhan' }}</div>
                     </div>
-                    <ul class="space-y-3 mb-8">
+                    <ul class="space-y-4 mb-8 grow">
                         @php
                             $features1 = explode("\n", $contents['services_pricing_1_features'] ?? "Konsultasi Awal Gratis\nTinjauan Dokumen\nSaran Hukum Dasar\nDukungan via Email");
                         @endphp
                         @foreach ($features1 as $item)
                         @if(trim($item))
-                        <li class="flex items-center gap-2 text-sm" style="color:#5a5e7a;">
-                            <i class="fas fa-check" style="color:#8a7048;"></i>{{ trim($item) }}
+                        <li class="flex items-start gap-3 text-sm leading-snug" style="color:#5a5e7a;">
+                            <i class="fas fa-check-circle mt-0.5" style="color:#8a7048;"></i>
+                            <span>{{ trim($item) }}</span>
                         </li>
                         @endif
                         @endforeach
                     </ul>
-                    <a href="{{ route('contact') }}" class="btn-outline w-full text-center block">Mulai Sekarang</a>
+                    <div class="mt-auto">
+                        <a href="{{ route('contact') }}" class="btn-outline w-full text-center block py-4">Mulai Sekarang</a>
+                    </div>
                 </div>
 
                 {{-- Professional (featured) --}}
-                <div class="glass rounded-2xl p-8 card-lift holographic reveal relative border-2" style="border-color:rgba(184,154,114,0.4);">
-                    <div class="absolute -top-4 left-1/2 -translate-x-1/2">
-                        <span class="badge badge-accent">Paling Populer</span>
+                <div class="glass rounded-2xl p-8 card-lift holographic reveal relative border-2 flex flex-col h-full" style="border-color:rgba(184,154,114,0.4);">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
+                        <span class="badge badge-accent shadow-lg px-6 py-2 border-none" style="background: linear-gradient(135deg, #B89A72, #d4b896); color: #242844;">Paling Populer</span>
                     </div>
                     <div class="absolute inset-0 rounded-2xl pointer-events-none"
                         style="background:linear-gradient(to bottom,rgba(184,154,114,0.06),transparent);"></div>
@@ -165,52 +169,60 @@
                         <h3 class="text-xl font-bold mb-1" style="color:#242844; font-family:'Playfair Display',serif;">{{ $contents['services_pricing_2_title'] ?? 'Profesional' }}</h3>
                         <p class="text-sm" style="color:#5a5e7a;">{{ $contents['services_pricing_2_desc'] ?? 'Untuk kebutuhan hukum menengah-kompleks' }}</p>
                     </div>
-                    <div class="relative mb-6 text-center py-5 rounded-xl" style="background:rgba(184,154,114,0.1); border:1px solid rgba(184,154,114,0.25);">
-                        <div class="text-2xl font-bold mb-1" style="color:#8a7048; font-family:'Playfair Display',serif;">
+                    <div class="relative mb-8 text-center py-6 rounded-2xl shadow-inner-sm transition-all hover:bg-[#B89A72]/15" 
+                        style="background:rgba(184,154,114,0.1); border:1.5px solid rgba(184,154,114,0.25);">
+                        <div class="text-2xl font-bold mb-1" style="color:#8a7048; font-family:'Playfair Display',serif; letter-spacing: -0.01em;">
                             {{ $contents['services_pricing_2_price'] ?? 'Hubungi Kami' }}
                         </div>
-                        <div class="text-xs" style="color:#5a5e7a;">{{ $contents['services_pricing_2_subprice'] ?? 'Konsultasi & penawaran gratis' }}</div>
+                        <div class="text-xs font-medium uppercase tracking-wider" style="color:#5a5e7a; opacity: 0.8;">{{ $contents['services_pricing_2_subprice'] ?? 'Konsultasi & penawaran gratis' }}</div>
                     </div>
-                    <ul class="relative space-y-3 mb-8">
+                    <ul class="relative space-y-4 mb-8 grow">
                         @php
                             $features2 = explode("\n", $contents['services_pricing_2_features'] ?? "Semua di Paket Dasar\nStrategi Kasus Mendalam\nRepresentasi Pengadilan\nDukungan Prioritas\nPersiapan & Review Dokumen");
                         @endphp
                         @foreach ($features2 as $item)
                         @if(trim($item))
-                        <li class="flex items-center gap-2 text-sm" style="color:#5a5e7a;">
-                            <i class="fas fa-check" style="color:#8a7048;"></i>{!! trim($item) !!}
+                        <li class="flex items-start gap-3 text-sm font-medium leading-snug" style="color:#363a5c;">
+                            <i class="fas fa-check-circle mt-0.5" style="color:#8a7048;"></i>
+                            <span>{!! trim($item) !!}</span>
                         </li>
                         @endif
                         @endforeach
                     </ul>
-                    <a href="{{ route('contact') }}" class="btn-primary w-full text-center block relative">Mulai Sekarang</a>
+                    <div class="relative mt-auto">
+                        <a href="{{ route('contact') }}" class="btn-primary w-full text-center block py-4 shadow-xl">Mulai Sekarang</a>
+                    </div>
                 </div>
 
                 {{-- Enterprise --}}
-                <div class="glass rounded-2xl p-8 card-lift holographic reveal">
+                <div class="glass rounded-2xl p-8 card-lift holographic reveal flex flex-col h-full">
                     <div class="mb-6">
                         <h3 class="text-xl font-bold mb-1" style="color:#242844; font-family:'Playfair Display',serif;">{{ $contents['services_pricing_3_title'] ?? 'Enterprise' }}</h3>
                         <p class="text-sm" style="color:#5a5e7a;">{{ $contents['services_pricing_3_desc'] ?? 'Untuk bisnis & korporasi besar' }}</p>
                     </div>
-                    <div class="mb-6 text-center py-5 rounded-xl" style="background:rgba(36,40,68,0.05); border:1px solid rgba(36,40,68,0.1);">
-                        <div class="text-2xl font-bold mb-1" style="color:#242844; font-family:'Playfair Display',serif;">
+                    <div class="mb-8 text-center py-6 rounded-2xl transition-all hover:bg-[#242844]/5" 
+                        style="background:rgba(36,40,68,0.05); border:1.5px solid rgba(36,40,68,0.1);">
+                        <div class="text-2xl font-bold mb-1" style="color:#242844; font-family:'Playfair Display',serif; letter-spacing: -0.01em;">
                             {{ $contents['services_pricing_3_price'] ?? 'Kustom' }}
                         </div>
-                        <div class="text-xs" style="color:#5a5e7a;">{{ $contents['services_pricing_3_subprice'] ?? 'Sesuai skala & kebutuhan bisnis' }}</div>
+                        <div class="text-xs font-medium uppercase tracking-wider" style="color:#5a5e7a; opacity: 0.8;">{{ $contents['services_pricing_3_subprice'] ?? 'Sesuai skala & kebutuhan bisnis' }}</div>
                     </div>
-                    <ul class="space-y-3 mb-8">
+                    <ul class="space-y-4 mb-8 grow">
                         @php
                             $features3 = explode("\n", $contents['services_pricing_3_features'] ?? "Semua di Paket Profesional\nTim Hukum Khusus\nDukungan Prioritas 24/7\nManajemen Kepatuhan\nSolusi Hukum Kustom");
                         @endphp
                         @foreach ($features3 as $item)
                         @if(trim($item))
-                        <li class="flex items-center gap-2 text-sm" style="color:#5a5e7a;">
-                            <i class="fas fa-check" style="color:#8a7048;"></i>{{ trim($item) }}
+                        <li class="flex items-start gap-3 text-sm leading-snug" style="color:#5a5e7a;">
+                            <i class="fas fa-check-circle mt-0.5" style="color:#8a7048;"></i>
+                            <span>{{ trim($item) }}</span>
                         </li>
                         @endif
                         @endforeach
                     </ul>
-                    <a href="{{ route('contact') }}" class="btn-outline w-full text-center block">Hubungi Kami</a>
+                    <div class="mt-auto">
+                        <a href="{{ route('contact') }}" class="btn-outline w-full text-center block py-4">Hubungi Kami</a>
+                    </div>
                 </div>
             </div>
         </div>
