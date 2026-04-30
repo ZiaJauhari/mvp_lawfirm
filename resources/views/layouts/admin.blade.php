@@ -521,7 +521,8 @@
         .adm-grid-4 { grid-template-columns: repeat(4, 1fr); }
 
         @media (max-width: 768px) {
-            .adm-grid-2, .adm-grid-3, .adm-grid-4 { grid-template-columns: 1fr; }
+            .adm-grid-2, .adm-grid-3 { grid-template-columns: 1fr; }
+            .adm-grid-4 { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
         }
 
         /* ── SEARCH BAR ── */
