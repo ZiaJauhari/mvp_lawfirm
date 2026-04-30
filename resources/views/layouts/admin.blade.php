@@ -579,16 +579,29 @@
         .adm-mob-toggle {
             display: none;
             position: fixed;
-            top: 1rem; left: 1rem;
+            top: 12px; left: 16px;
             z-index: 60;
             width: 40px; height: 40px;
             border-radius: 0.5rem;
-            background: var(--comet);
-            color: #FDFBFC;
+            background: #fff;
+            color: var(--comet);
             align-items: center;
             justify-content: center;
-            border: none;
+            border: 1px solid rgba(184,154,114,0.25);
+            box-shadow: 0 2px 8px rgba(36,40,68,0.05);
             cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .adm-mob-toggle:hover {
+            background: var(--cream-alt);
+        }
+
+        .adm-mob-toggle.open {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            border-color: rgba(255,255,255,0.2);
+            box-shadow: none;
         }
 
         .adm-overlay { display: none; }
@@ -603,9 +616,10 @@
                 position: fixed; inset: 0;
                 background: rgba(0,0,0,0.4);
                 z-index: 45;
+                backdrop-filter: blur(2px);
             }
-            .adm-header { padding-left: 4rem; }
-            .adm-sidebar-brand { padding-left: 4rem; }
+            .adm-header { padding-left: 4.5rem; }
+            .adm-sidebar-brand { padding-left: 4.5rem; }
         }
 
         @media (max-width: 600px) {
@@ -862,10 +876,16 @@
     function openSidebar(){
         document.getElementById('adm-sidebar').classList.add('open');
         document.getElementById('adm-overlay').classList.add('open');
+        var toggleBtn = document.getElementById('adm-mob-toggle');
+        toggleBtn.classList.add('open');
+        toggleBtn.innerHTML = '<i class="fas fa-times"></i>';
     }
     function closeSidebar(){
         document.getElementById('adm-sidebar').classList.remove('open');
         document.getElementById('adm-overlay').classList.remove('open');
+        var toggleBtn = document.getElementById('adm-mob-toggle');
+        toggleBtn.classList.remove('open');
+        toggleBtn.innerHTML = '<i class="fas fa-bars"></i>';
     }
 
     // Auto-dismiss flash after 5s
