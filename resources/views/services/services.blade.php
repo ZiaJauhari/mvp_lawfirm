@@ -159,7 +159,7 @@
                 </div>
 
                 {{-- Professional (featured) --}}
-                <div class="glass rounded-2xl p-8 card-lift holographic reveal relative border-2 flex flex-col h-full overflow-visible" style="border-color:rgba(184,154,114,0.4);">
+                <div class="glass rounded-2xl p-8 card-lift holographic reveal relative border-2 flex flex-col h-full overflow-visible" style="border-color:rgba(184,154,114,0.4); isolation: isolate; overflow: visible !important;">
                     <div class="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
                         <span class="badge badge-accent shadow-lg px-6 py-2 border-none" style="background: linear-gradient(135deg, #B89A72, #d4b896); color: #242844;">Paling Populer</span>
                     </div>
