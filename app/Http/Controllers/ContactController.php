@@ -21,7 +21,27 @@ class ContactController extends Controller
             'contact_hero_subtitle' => 'Siap membahas kebutuhan hukum Anda? Hubungi tim kami untuk konsultasi gratis.',
             'contact_info_title' => 'Mari Mulai Percakapan',
             'contact_info_subtitle' => 'Baik Anda memiliki pertanyaan hukum spesifik atau membutuhkan representasi hukum komprehensif, tim kami siap membantu.',
+            'contact_map_jakarta_iframe' => '',
+            'contact_map_samarinda_iframe' => '',
         ];
+
+        // Ensure map keys exist in database for Admin to see
+        foreach (['contact_map_jakarta_iframe' => 'Embed Map Jakarta', 'contact_map_samarinda_iframe' => 'Embed Map Samarinda'] as $key => $label) {
+            if (!isset($contents[$key])) {
+                try {
+                    \App\Models\PageContent::create([
+                        'page' => 'contact',
+                        'section' => 'map',
+                        'key' => $key,
+                        'value' => '',
+                        'type' => 'textarea',
+                        'label' => $label,
+                        'order' => 50
+                    ]);
+                    $contents[$key] = '';
+                } catch (\Exception $e) {}
+            }
+        }
 
         $contents = array_merge($defaults, $contents);
 

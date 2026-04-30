@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+    <style>
+        .map-container iframe {
+            width: 100% !important;
+            height: 100% !important;
+            border: 0;
+        }
+    </style>
     {{-- ===================== HERO ===================== --}}
     <section class="relative py-32 overflow-hidden hero-pattern" style="background:#FDFBFC;">
         <div class="absolute inset-0 pointer-events-none overflow-hidden">
@@ -199,13 +206,17 @@
                     <h3 class="text-lg font-bold mb-4 flex items-center gap-2" style="color:#242844; font-family:'Playfair Display',serif;">
                         <i class="fas fa-city text-[#B89A72]"></i> Head Office (Jakarta)
                     </h3>
-                    <div class="glass rounded-2xl overflow-hidden holographic h-80 border border-[#B89A72]/10">
-                        <div class="h-full img-placeholder flex items-center justify-center">
-                            <div class="text-center">
-                                <i class="fas fa-map-location-dot text-5xl text-[#B89A72]/30 mb-3"></i>
-                                <p class="text-sm font-semibold" style="color:#5a5e7a;">Peta Jakarta</p>
+                    <div class="glass rounded-2xl overflow-hidden holographic h-80 border border-[#B89A72]/10 map-container">
+                        @if(!empty($contents['contact_map_jakarta_iframe']))
+                            {!! $contents['contact_map_jakarta_iframe'] !!}
+                        @else
+                            <div class="h-full img-placeholder flex items-center justify-center">
+                                <div class="text-center">
+                                    <i class="fas fa-map-location-dot text-5xl text-[#B89A72]/30 mb-3"></i>
+                                    <p class="text-sm font-semibold" style="color:#5a5e7a;">Peta Jakarta</p>
+                                </div>
                             </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
 
@@ -214,13 +225,17 @@
                     <h3 class="text-lg font-bold mb-4 flex items-center gap-2" style="color:#242844; font-family:'Playfair Display',serif;">
                         <i class="fas fa-building-flag text-[#B89A72]"></i> Branch Office (Samarinda)
                     </h3>
-                    <div class="glass rounded-2xl overflow-hidden holographic h-80 border border-[#B89A72]/10">
-                        <div class="h-full img-placeholder flex items-center justify-center">
-                            <div class="text-center">
-                                <i class="fas fa-map-location-dot text-5xl text-[#B89A72]/30 mb-3"></i>
-                                <p class="text-sm font-semibold" style="color:#5a5e7a;">Peta Samarinda</p>
+                    <div class="glass rounded-2xl overflow-hidden holographic h-80 border border-[#B89A72]/10 map-container">
+                        @if(!empty($contents['contact_map_samarinda_iframe']))
+                            {!! $contents['contact_map_samarinda_iframe'] !!}
+                        @else
+                            <div class="h-full img-placeholder flex items-center justify-center">
+                                <div class="text-center">
+                                    <i class="fas fa-map-location-dot text-5xl text-[#B89A72]/30 mb-3"></i>
+                                    <p class="text-sm font-semibold" style="color:#5a5e7a;">Peta Samarinda</p>
+                                </div>
                             </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
