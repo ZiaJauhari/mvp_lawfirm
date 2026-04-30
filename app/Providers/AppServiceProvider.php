@@ -28,6 +28,28 @@ class AppServiceProvider extends ServiceProvider
             $footer[$item->key] = $item->value;
         }
 
+        // Auto-create footer_title if it doesn't exist in DB to make it appear in Admin
+        if (!isset($footer['footer_title'])) {
+            try {
+                \App\Models\PageContent::create([
+                    'page' => 'footer',
+                    'section' => 'brand',
+                    'key' => 'footer_title',
+                    'value' => 'Clarity in Every Legal Move',
+                    'type' => 'text',
+                    'label' => 'Judul Footer',
+                    'order' => 0
+                ]);
+                // Refresh list
+                $footerItems = PageContent::where('page', 'footer')->orderBy('order')->get();
+                foreach ($footerItems as $item) {
+                    $footer[$item->key] = $item->value;
+                }
+            } catch (\Exception $e) {
+                // Silently fail if DB not ready
+            }
+        }
+
         $defaults = [
             'footer_title'         => 'Clarity in Every Legal Move',
             'footer_description'   => 'Layanan hukum profesional dengan integritas dan keunggulan. Solusi hukum komprehensif untuk individu dan bisnis.',
