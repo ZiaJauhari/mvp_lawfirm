@@ -605,6 +605,7 @@
                 z-index: 45;
             }
             .adm-header { padding-left: 4rem; }
+            .adm-sidebar-brand { padding-left: 4rem; }
         }
 
         @media (max-width: 600px) {
