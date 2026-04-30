@@ -1,25 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-    <!-- Hero Section - Enhanced -->
-    <section class="relative py-32 overflow-hidden hero-pattern bg-[#FDFBFC]">
-        <div class="absolute inset-0">
-            <div class="absolute top-20 left-20 w-96 h-96 bg-[#B89A72]/10 rounded-full blur-3xl animate-float"></div>
-            <div class="absolute bottom-20 right-20 w-72 h-72 bg-[#d4b896]/10 rounded-full blur-3xl animate-float"
-                style="animation-delay: 1s;"></div>
-            <!-- Floating Elements -->
-            <div class="absolute top-1/3 right-1/4 w-4 h-4 bg-[#B89A72]/30 rounded-full float-slow"></div>
-            <div class="absolute bottom-1/3 left-1/4 w-5 h-5 bg-[#d4b896]/20 rounded-full float-delayed"></div>
+    {{-- ===================== HERO ===================== --}}
+    <section class="relative py-32 overflow-hidden hero-pattern" style="background:#FDFBFC;">
+        <div class="absolute inset-0 pointer-events-none overflow-hidden">
+            <div class="absolute top-16 right-16 w-96 h-96 rounded-full blur-3xl animate-float"
+                style="background:radial-gradient(circle,rgba(184,154,114,0.1),transparent 70%);"></div>
+            <div class="absolute bottom-16 left-16 w-72 h-72 rounded-full blur-3xl animate-float"
+                style="background:radial-gradient(circle,rgba(212,184,150,0.08),transparent 70%); animation-delay:1.2s;"></div>
         </div>
-
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
-            <span class="badge badge-accent mb-6 inline-block holographic">Hubungi Kami</span>
-            <h1 class="text-5xl md:text-6xl font-bold text-[#242844] mb-6">
-                {!! $contents['contact_hero_title'] !!}
-            </h1>
-            <p class="mt-4 text-xl text-[#5a5e7a] max-w-3xl mx-auto leading-relaxed">
-                {{ $contents['contact_hero_subtitle'] }}
-            </p>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="reveal max-w-3xl mx-auto">
+                <span class="text-uppercase-accent mb-3 block">Hubungi Kami</span>
+                <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold mb-6"
+                    style="font-family:'Playfair Display',serif; color:#242844; letter-spacing:-0.02em;">
+                    {!! $contents['contact_hero_title'] !!}
+                </h1>
+                <p class="text-lg md:text-xl leading-relaxed" style="color:#5a5e7a;">
+                    {{ $contents['contact_hero_subtitle'] }}
+                </p>
+            </div>
         </div>
     </section>
 

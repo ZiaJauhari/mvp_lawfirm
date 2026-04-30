@@ -5,24 +5,19 @@
     {{-- ===================== HERO ===================== --}}
     <section class="relative py-32 overflow-hidden hero-pattern" style="background:#FDFBFC;">
         <div class="absolute inset-0 pointer-events-none overflow-hidden">
-            <div class="absolute top-16 left-16 w-96 h-96 rounded-full blur-3xl animate-float"
+            <div class="absolute top-16 right-16 w-96 h-96 rounded-full blur-3xl animate-float"
                 style="background:radial-gradient(circle,rgba(184,154,114,0.1),transparent 70%);"></div>
-            <div class="absolute bottom-16 right-16 w-72 h-72 rounded-full blur-3xl animate-float"
+            <div class="absolute bottom-16 left-16 w-72 h-72 rounded-full blur-3xl animate-float"
                 style="background:radial-gradient(circle,rgba(212,184,150,0.08),transparent 70%); animation-delay:1.2s;"></div>
         </div>
-
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl reveal">
-                {{-- Decorative line --}}
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="h-0.5 w-12 rounded" style="background:linear-gradient(90deg,#B89A72,#d4b896);"></div>
-                    <span class="text-uppercase-accent">Layanan Kami</span>
-                </div>
-                <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold mb-6 leading-[1.08]"
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="reveal max-w-3xl mx-auto">
+                <span class="text-uppercase-accent mb-3 block">Layanan Kami</span>
+                <h1 class="text-5xl md:text-6xl xl:text-7xl font-bold mb-6"
                     style="font-family:'Playfair Display',serif; color:#242844; letter-spacing:-0.02em;">
                     {!! $contents['services_hero_title'] !!}
                 </h1>
-                <p class="text-lg md:text-xl leading-relaxed max-w-2xl" style="color:#5a5e7a;">
+                <p class="text-lg md:text-xl leading-relaxed" style="color:#5a5e7a;">
                     {{ $contents['services_hero_subtitle'] }}
                 </p>
             </div>
