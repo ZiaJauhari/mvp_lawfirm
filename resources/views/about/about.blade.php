@@ -30,20 +30,6 @@
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="space-y-6 reveal-left">
-                    {{-- Mission --}}
-                    <div class="glass rounded-2xl p-8 holographic card-lift">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 rounded-xl flex items-center justify-center border pulse-ring"
-                                style="background:linear-gradient(135deg,rgba(184,154,114,0.15),rgba(212,184,150,0.1)); border-color:rgba(184,154,114,0.25);">
-                                <i class="fas fa-bullseye text-xl" style="color:#8a7048;"></i>
-                            </div>
-                            <h3 class="text-2xl font-bold" style="font-family:'Playfair Display',serif; color:#242844;">{{ $contents['about_mission_title'] }}</h3>
-                        </div>
-                        <p class="text-sm leading-relaxed" style="color:#5a5e7a;">
-                            {{ $contents['about_mission_text'] }}
-                        </p>
-                    </div>
-
                     {{-- Vision --}}
                     <div class="glass rounded-2xl p-8 holographic card-lift">
                         <div class="flex items-center gap-4 mb-4">
@@ -55,6 +41,20 @@
                         </div>
                         <p class="text-sm leading-relaxed" style="color:#5a5e7a;">
                             {{ $contents['about_vision_text'] }}
+                        </p>
+                    </div>
+
+                    {{-- Mission --}}
+                    <div class="glass rounded-2xl p-8 holographic card-lift">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 rounded-xl flex items-center justify-center border pulse-ring"
+                                style="background:linear-gradient(135deg,rgba(184,154,114,0.15),rgba(212,184,150,0.1)); border-color:rgba(184,154,114,0.25);">
+                                <i class="fas fa-bullseye text-xl" style="color:#8a7048;"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold" style="font-family:'Playfair Display',serif; color:#242844;">{{ $contents['about_mission_title'] }}</h3>
+                        </div>
+                        <p class="text-sm leading-relaxed" style="color:#5a5e7a;">
+                            {{ $contents['about_mission_text'] }}
                         </p>
                     </div>
                 </div>
